@@ -1,6 +1,7 @@
 Wan2.1-T2V-1.3B-480P:
     model_type: T2V
     model_dl:
+        dl_way: ms
         repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
         basic_dir: models
         files:
@@ -9,11 +10,12 @@ Wan2.1-T2V-1.3B-480P:
             # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
             vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
             
-    resolution_list: [832*480, 480*832, 624*624, 704*544, 544*704]
+    resolution_list: [832x480, 480x832, 624x624, 704x544, 544x704]
 
 Wan2.1-T2V-14B-720P:
     model_type: T2V
     model_dl:
+        dl_way: ms
         repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
         basic_dir: models
         files:
@@ -22,4 +24,4 @@ Wan2.1-T2V-14B-720P:
             # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
             vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
             
-    resolution_list: [1088*832, 832*1088, 1280*720, 720*1280, 960*960, 480*832, 832*480, 624*624, 704*544, 544*704]
+    resolution_list: [1088x832, 832x1088, 1280x720, 720x1280, 960x960, 480x832, 832x480, 624x624, 704x544, 544x704]

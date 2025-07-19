@@ -32,7 +32,7 @@ def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, leng
         workflow = json.load(f)
 
     # 拆分成宽和高
-    width_str, height_str = scale.split("*")
+    width_str, height_str = scale.split("x")
     width = int(width_str)
     height = int(height_str)
     
@@ -137,7 +137,7 @@ def gradio_ui(app_url, back_app_path):
                     scale = gr.Dropdown(choices=resolution_list, label="分辨率(宽×高)",)
                     steps = gr.Slider(value=30, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
                     cfg = gr.Slider(value=3.5, label='CFG', maximum=32, step=0.1)
-                    length = gr.Slider(value=33, label='生成帧数', maximum=81, step=1)
+                    length = gr.Slider(value=33, label='生成帧数', minimum=33, maximum=129, step=16)
                     batch_size = gr.Slider(value=1, label='单批数量', maximum=16, step=1, interactive=False, info="当前模式下批次大小不可修改") # 禁用吧
                     
                 with gr.Row():
