@@ -1,0 +1,4 @@
+[submodule "backend/comfyui_musa"]
+	path = backend/comfyui_musa
+	url = https://github.com/hben35096/ComfyUI
+	branch = musa

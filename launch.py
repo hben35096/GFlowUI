@@ -8,7 +8,7 @@ parser.add_argument('--port', nargs='?', const=7860, default=7860, type=int, hel
 args = parser.parse_args()
 
 self_dir = os.path.abspath(os.path.dirname(__file__))
-back_app_path = os.path.join(self_dir, 'backend', 'ComfyUI')
+back_app_path = os.path.join(self_dir, 'backend', 'comfyui_musa')
 launch_keywords = ["Python version:", "Total VRAM", "pytorch version:", "device detected:"]
 
 
