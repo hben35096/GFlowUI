@@ -121,7 +121,7 @@ def gradio_ui(app_url, back_app_path):
     with gr.Blocks(theme="soft", js=js_func, css=generate_btn_css) as demo:
         gr.HTML(f"""
         <div style="display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-bottom: 1.5em;">
-          <img src="https://img.alicdn.com/imgextra/i4/O1CN01EfJVFQ1uZPd7W4W6i_!!6000000006051-2-tps-112-112.png" 
+          <img src="https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png" 
                alt="Logo" style="height: 48px; auto;">
           <div>
             <div style="font-size: 22px; font-weight: bold;">{main_name}</div>
