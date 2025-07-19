@@ -1,6 +1,7 @@
 
 main_name: Wan-2.1
 main_description: 阿里通义开发的文生视频开源模型
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
 
 examples_dict:
     企鹅邮差: 

@@ -10,44 +10,72 @@ self_dir = os.path.abspath(os.path.dirname(__file__))
 workflow_dir = os.path.join(self_dir, 'workflow_files')
 config_dir = os.path.join(self_dir, 'config_files')
 
-model_config = functions.load_config(os.path.join(config_dir, 'wan_config.yaml'))
+main_config = functions.load_config(os.path.join(config_dir, 'main_config.yaml'))
+model_config = functions.load_config(os.path.join(config_dir, main_config.get('model_config_file')))
 model_names = list(model_config.keys())
 model_name_a = model_names[0]
 resolution_list = model_config[model_name_a].get('resolution_list')
 
 # 例子配置，顺便把标题放一起
-ex_config = functions.load_config(os.path.join(config_dir, 'wan_ex.yaml'))
+ex_config = functions.load_config(os.path.join(config_dir, main_config.get('ex_config_file')))
 main_name = ex_config.get('main_name')
 main_description = ex_config.get('main_description')
+main_logo = ex_config.get('main_logo')
 examples_dict = ex_config.get('examples_dict')
 example_list = list(examples_dict.values())
 examples_norm = [t for t in example_list]
 
+WAN_MODELS = ["Wan2.1-T2V-1.3B-480P", "Wan2.1-T2V-14B-720P"]
+HUNYUAN_MODELS = ["HunyuanVideo-T2V-720P"]
+
+# 这里定义一下叫法
+if model_name_a in WAN_MODELS:
+    cfg_name = 'CFG'
+    neg_prompt_display = True
+elif model_name_a in HUNYUAN_MODELS:
+    cfg_name = '条件引导系数'
+    neg_prompt_display = False
+
 div_line = "-" * 50
 
-def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed):
+def get_workflow(model, scale):
     workflow_file = f'{model}.json'
     workflow_path = os.path.join(workflow_dir, workflow_file) # 工作流文件路径
     with open(workflow_path, "r") as f:
         workflow = json.load(f)
-
     # 拆分成宽和高
     width_str, height_str = scale.split("x")
     width = int(width_str)
     height = int(height_str)
-    
-    # 修改内容
-    workflow["6"]["inputs"]["text"] = prompt_input
-    workflow["7"]["inputs"]["text"] = neg_prompt_input
-    
-    workflow["3"]["inputs"]["steps"] = steps
-    workflow["3"]["inputs"]["seed"] = seed
-    workflow["3"]["inputs"]["cfg"] = cfg
+    return workflow, width, height
 
-    workflow["40"]["inputs"]["width"] = width
-    workflow["40"]["inputs"]["height"] = height
-    workflow["40"]["inputs"]["length"] = length
-    workflow["40"]["inputs"]["batch_size"] = batch_size
+def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed):
+    workflow, width, height = get_workflow(model, scale)
+
+    if model in WAN_MODELS:
+        workflow["6"]["inputs"]["text"] = prompt_input
+        workflow["7"]["inputs"]["text"] = neg_prompt_input
+        
+        workflow["3"]["inputs"]["steps"] = steps
+        workflow["3"]["inputs"]["seed"] = seed
+        workflow["3"]["inputs"]["cfg"] = cfg
+    
+        workflow["40"]["inputs"]["width"] = width
+        workflow["40"]["inputs"]["height"] = height
+        workflow["40"]["inputs"]["length"] = length
+        workflow["40"]["inputs"]["batch_size"] = batch_size
+    elif model in HUNYUAN_MODELS:
+        workflow["44"]["inputs"]["text"] = prompt_input
+        
+        workflow["17"]["inputs"]["steps"] = steps
+        
+        workflow["25"]["inputs"]["noise_seed"] = seed
+        workflow["26"]["inputs"]["guidance"] = cfg #
+    
+        workflow["45"]["inputs"]["width"] = width
+        workflow["45"]["inputs"]["height"] = height
+        workflow["45"]["inputs"]["length"] = length
+        workflow["45"]["inputs"]["batch_size"] = batch_size
 
     return workflow
 
@@ -121,7 +149,7 @@ def gradio_ui(app_url, back_app_path):
     with gr.Blocks(theme="soft", js=js_func, css=generate_btn_css) as demo:
         gr.HTML(f"""
         <div style="display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-bottom: 1.5em;">
-          <img src="https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png" 
+          <img src={main_logo} 
                alt="Logo" style="height: 48px; auto;">
           <div>
             <div style="font-size: 22px; font-weight: bold;">{main_name}</div>
@@ -136,7 +164,7 @@ def gradio_ui(app_url, back_app_path):
                 with gr.Group():
                     scale = gr.Dropdown(choices=resolution_list, label="分辨率(宽×高)",)
                     steps = gr.Slider(value=30, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
-                    cfg = gr.Slider(value=3.5, label='CFG', maximum=32, step=0.1)
+                    cfg = gr.Slider(value=4.0, label=cfg_name, maximum=32, step=0.1)
                     length = gr.Slider(value=33, label='生成帧数', minimum=33, maximum=129, step=16)
                     batch_size = gr.Slider(value=1, label='单批数量', maximum=16, step=1, interactive=False, info="当前模式下批次大小不可修改") # 禁用吧
                     
@@ -147,18 +175,20 @@ def gradio_ui(app_url, back_app_path):
                 with gr.Row():
                     with gr.Column(scale=8):
                         with gr.Row():
-                            prompt_input = gr.Textbox(label="提示词", placeholder="正向提示词 Positive Prompt", show_label=False, container=False, lines=4, scale=4) 
-                            neg_prompt_input = gr.Textbox(placeholder="反向提示词 Negative Prompt", show_label=False,  container=False, lines=4, scale=4)
+                            prompt_input = gr.Textbox(
+                                label="提示词", placeholder="正向提示词 Positive Prompt", show_label=False, container=False, lines=4, max_lines=8, scale=4
+                            ) 
+                            neg_prompt_input = gr.Textbox(
+                                placeholder="反向提示词 Negative Prompt", show_label=False,  container=False, lines=4, max_lines=8, scale=4, visible=neg_prompt_display
+                            )
                         examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input], example_labels=list(examples_dict.keys()),) 
     
                     with gr.Column(scale=1, min_width=160): # , min_width=160
                         generate_btn = gr.Button("生成视频", variant="primary", elem_classes="custom-btn")
                         gr.Markdown("##### 批量生成：")
                         queue_size = gr.Number(value=1, label='列队数量', precision=0, minimum=1, step=1, scale=1, container=False, min_width=126)
-                        
-                    
-    
                 video_output = gr.Video(label="Output Video", height=450, show_download_button=True, interactive=False)
+                
         _url_input = gr.Textbox(value=app_url, visible=False) # 前面加 _ 的只是方便传递，不需要显示
         _app_path_input = gr.Textbox(value=back_app_path, visible=False)
         
