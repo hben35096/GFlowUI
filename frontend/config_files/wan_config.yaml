@@ -6,7 +6,7 @@ Wan2.1-T2V-1.3B-480P:
         files:
             diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors
             text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
-            clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
+            # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
             vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
             
     resolution_list: [832*480, 480*832, 624*624, 704*544, 544*704]
@@ -19,18 +19,7 @@ Wan2.1-T2V-14B-720P:
         files:
             diffusion_models/wan2.1_t2v_14B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors
             text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
-            clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
+            # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
             vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
             
     resolution_list: [1088*832, 832*1088, 1280*720, 720*1280, 960*960, 480*832, 832*480, 624*624, 704*544, 544*704]
-                                
-
-
-
-
-
-
-
-
-    
-    
