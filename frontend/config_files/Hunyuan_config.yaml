@@ -10,5 +10,14 @@ HunyuanVideo-T2V-720P:
             text_encoders/clip_l.safetensors: split_files/text_encoders/clip_l.safetensors
             text_encoders/llava_llama3_fp16.safetensors: split_files/text_encoders/llava_llama3_fp16.safetensors
             vae/hunyuan_video_vae_bf16.safetensors: split_files/vae/hunyuan_video_vae_bf16.safetensors
+        
+        # dl_way: cg
+        # repo_id: nahz202/hunyuan_video
+        # basic_dir: models
+        # files:
+        #     diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors: hunyuan_video_t2v_720p_bf16.safetensors
+        #     text_encoders/clip_l.safetensors: clip_l.safetensors
+        #     text_encoders/llava_llama3_fp16.safetensors: llava_llama3_fp16.safetensors
+        #     vae/hunyuan_video_vae_bf16.safetensors: hunyuan_video_vae_bf16.safetensors
             
     resolution_list: [960x544, 544x960, 832x624, 624x832, 720x720, 960x960, 832x1104, 1104x832, 1280x720, 720x1280]
