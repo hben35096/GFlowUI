@@ -71,13 +71,16 @@ def check_repo_wholeness(repoid, dir_path):
     return absence
 
 # 模型检测和下载，现在支持两种下载方式
-def check_models(back_app_path, model_dl_dict):
-    repo_id = model_dl_dict.get('repo_id')
-    model_file_dict = model_dl_dict.get('files')
+def check_models(back_app_path, model_dl_dict, dl_way):
+    if dl_way not in model_dl_dict:
+        print("配置表中找不到下载方式 “cg” 相关信息，将使用 “ms” 从 ModelScope 下载")
+        dl_way = "ms"
+
+    repo_id = model_dl_dict[dl_way].get('repo_id')
+    model_file_dict = model_dl_dict[dl_way].get('files')
     model_file_list = list(model_file_dict.keys())
     print(f"正在检测模型完整性...") # \n{model_file_list}
-    
-    model_dir = os.path.join(back_app_path, model_dl_dict.get('basic_dir'))
+    model_dir = os.path.join(back_app_path, model_dl_dict[dl_way].get('basic_dir'))
     
     temp_dir = os.path.join(model_dir, 'temp_models')
     os.makedirs(temp_dir, exist_ok=True)
@@ -91,7 +94,6 @@ def check_models(back_app_path, model_dl_dict):
                 gr.Info(info_t, duration=6)
                 
                 remote_file = model_file_dict.get(file)
-                dl_way = model_dl_dict.get('dl_way')
                 
                 if dl_way == "ms":
                     temp_file_path = ms_model_download(temp_dir, repo_id, remote_file)

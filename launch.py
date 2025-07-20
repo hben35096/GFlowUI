@@ -40,7 +40,7 @@ def launch_app(command, back_app_path=None):
                 if app_url:
                     print("✅ 后端启动完成")
                     from frontend import common as grui
-                    demo = grui.gradio_ui(app_url, back_app_path)
+                    demo = grui.gradio_ui(app_url, back_app_path, args.dl_way)
                     demo.launch(server_port=int(args.port),)
             elif any(keyword in line for keyword in launch_keywords):
                 print(line.strip())

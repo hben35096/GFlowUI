@@ -91,13 +91,15 @@ def seed_update(seed, seed_fixed):
         seed = random.randint(1, 999999999999999)
     return gr.update(value=seed)
 
-def video_generate(_url_input, _app_path_input, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size):
+def video_generate(launch_state, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size):
     from frontend import to_api
     importlib.reload(to_api) # 实时更改生效，以后就不需要了
 
+    app_url, back_app_path, dl_way = launch_state
+
     target_path = None
-    model_dl_dict = model_config[model].get('model_dl')
-    model_dl.check_models(_app_path_input, model_dl_dict) # 检测模型
+    model_dl_dict = model_config[model].get('download_way')
+    model_dl.check_models(back_app_path, model_dl_dict, dl_way) # 检测模型
     gr.Info("任务已提交，可以到后台查看任务进度", duration=3)
     for i in range(queue_size):
         print(f"列队任务：{i+1}/{queue_size}")
@@ -106,7 +108,7 @@ def video_generate(_url_input, _app_path_input, model, prompt_input, neg_prompt_
         # print("现在的种子：", seed)
         workflow = edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed)
         
-        output_file_path_list = to_api.implement(workflow, _url_input, _app_path_input)
+        output_file_path_list = to_api.implement(workflow, app_url, back_app_path)
     
         video_path = output_file_path_list
         if isinstance(output_file_path_list, list):
@@ -144,7 +146,7 @@ generate_btn_css="""
 """
 
 # 如果是热加载，不能放 def 里面的
-def gradio_ui(app_url, back_app_path):
+def gradio_ui(app_url, back_app_path, dl_way):
 
     with gr.Blocks(theme="soft", js=js_func, css=generate_btn_css) as demo:
         gr.HTML(f"""
@@ -189,12 +191,11 @@ def gradio_ui(app_url, back_app_path):
                         queue_size = gr.Number(value=1, label='列队数量', precision=0, minimum=1, step=1, scale=1, container=False, min_width=126)
                 video_output = gr.Video(label="Output Video", height=450, show_download_button=True, interactive=False)
                 
-        _url_input = gr.Textbox(value=app_url, visible=False) # 前面加 _ 的只是方便传递，不需要显示
-        _app_path_input = gr.Textbox(value=back_app_path, visible=False)
+        launch_state = gr.State(value=(app_url, back_app_path, dl_way)) # 多个参数放这里方便传递
         
         generate_btn.click(
             fn=video_generate,
-            inputs=[_url_input, _app_path_input, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size],
+            inputs=[launch_state, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size],
             outputs=[video_output] # video_output, 暂时不要
         ).success(fn=seed_update, inputs=[seed, seed_fixed], outputs=[seed])
         model.select(fn=model_switch, inputs=[model], outputs=[scale])

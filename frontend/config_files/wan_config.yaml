@@ -1,27 +1,26 @@
 Wan2.1-T2V-1.3B-480P:
     model_type: T2V
-    model_dl:
-        dl_way: ms
-        repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
-        basic_dir: models
-        files:
-            diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors
-            text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
-            # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
-            vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
+    download_way:
+        ms:
+            basic_dir: models
+            repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
+            files:
+                diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors
+                text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
+                # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
+                vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
             
     resolution_list: [832x480, 480x832, 624x624, 704x544, 544x704]
 
 Wan2.1-T2V-14B-720P:
     model_type: T2V
-    model_dl:
-        dl_way: ms
-        repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
-        basic_dir: models
-        files:
-            diffusion_models/wan2.1_t2v_14B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors
-            text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
-            # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
-            vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
+    download_way:
+        ms:
+            basic_dir: models
+            repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
+            files:
+                diffusion_models/wan2.1_t2v_14B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors
+                text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
+                vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
             
     resolution_list: [1088x832, 832x1088, 1280x720, 720x1280, 960x960, 480x832, 832x480, 624x624, 704x544, 544x704]
