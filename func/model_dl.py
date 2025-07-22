@@ -102,6 +102,9 @@ def check_models(back_app_path, model_dl_dict, dl_way):
                     temp_file_path = ms_model_download(temp_dir, repo_id, remote_file)
                 elif dl_way == "cg":
                     temp_file_path = cg_model_download(temp_dir, repo_id, remote_file)
+                    if not os.path.exists(temp_file_path):
+                        print("“cg” 下载方式失败，改成从 ModelScope 下载")
+                        temp_file_path = ms_model_download(temp_dir, repo_id, remote_file)
                 
                 if os.path.exists(temp_file_path):
                     shutil.move(temp_file_path, file_path)
