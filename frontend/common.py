@@ -250,7 +250,7 @@ def gradio_ui(app_url, back_app_path, dl_way):
                     pass
                 with gr.Row():
                     input_img = gr.Image(label="上传参考图-如果不上传参考图，则采用文生视频模式", type="filepath", height=432, visible=input_img_display)  # 暂时不显示，也不调用
-                    all_output = gr.Gallery(label="生成结果", columns=3, object_fit="contain", height=432, selected_index=0, preview=True, scale=2)
+                    all_output = gr.Gallery(label="生成结果", columns=3, object_fit="contain", interactive=False, height=432, selected_index=0, preview=True, scale=2)
 
         with examples_container:
             examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()),)  # 
