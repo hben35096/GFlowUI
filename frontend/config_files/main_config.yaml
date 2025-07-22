@@ -1,0 +1,10 @@
+
+
+# model_config_file: Hunyuan_config.yaml
+# ex_config_file: Hunyuan_ex.yaml
+
+# model_config_file: wan_config.yaml
+# ex_config_file: wan_ex.yaml
+
+model_config_file: LTX_config.yaml
+ex_config_file: LTX_ex.yaml

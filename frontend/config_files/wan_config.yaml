@@ -1,36 +1,37 @@
 Wan2.1-T2V-1.3B-480P:
     model_type: T2V
-    model_dl:
-        repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
-        basic_dir: models
-        files:
-            diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors
-            text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
-            clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
-            vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors: Comfy-Org/Wan_2.1_ComfyUI_repackaged/split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors
+                text_encoders/umt5_xxl_fp16.safetensors: Comfy-Org/Wan_2.1_ComfyUI_repackaged/split_files/text_encoders/umt5_xxl_fp16.safetensors
+                # clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
+                vae/wan_2.1_vae.safetensors: Comfy-Org/Wan_2.1_ComfyUI_repackaged/split_files/vae/wan_2.1_vae.safetensors
+                # 键是目录，值是 repo id 和 远程文件路径的组合
+        cg:
+            basic_dir: models
+            files:
+                diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors: nahz202/Wan-Video-ComfyOrg/wan2.1_t2v_1.3B_fp16.safetensors
+                text_encoders/umt5_xxl_fp16.safetensors: nahz202/Wan-Video-ComfyOrg/umt5_xxl_fp16.safetensors
+                vae/wan_2.1_vae.safetensors: nahz202/Wan-Video-ComfyOrg/wan_2.1_vae.safetensors
             
-    resolution_list: [832*480, 480*832, 624*624, 704*544, 544*704]
+    resolution_list: [832x480, 480x832, 624x624, 704x544, 544x704]
 
 Wan2.1-T2V-14B-720P:
     model_type: T2V
-    model_dl:
-        repo_id: Comfy-Org/Wan_2.1_ComfyUI_repackaged
-        basic_dir: models
-        files:
-            diffusion_models/wan2.1_t2v_14B_fp16.safetensors: split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors
-            text_encoders/umt5_xxl_fp16.safetensors: split_files/text_encoders/umt5_xxl_fp16.safetensors
-            clip_vision/clip_vision_h.safetensors: split_files/clip_vision/clip_vision_h.safetensors
-            vae/wan_2.1_vae.safetensors: split_files/vae/wan_2.1_vae.safetensors
-            
-    resolution_list: [1088*832, 832*1088, 1280*720, 720*1280, 960*960, 480*832, 832*480, 624*624, 704*544, 544*704]
-                                
-
-
-
-
-
-
-
-
-    
-    
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                diffusion_models/wan2.1_t2v_14B_fp16.safetensors: Comfy-Org/Wan_2.1_ComfyUI_repackaged/split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors
+                text_encoders/umt5_xxl_fp16.safetensors: Comfy-Org/Wan_2.1_ComfyUI_repackaged/split_files/text_encoders/umt5_xxl_fp16.safetensors
+                vae/wan_2.1_vae.safetensors: Comfy-Org/Wan_2.1_ComfyUI_repackaged/split_files/vae/wan_2.1_vae.safetensors
+        cg:
+            basic_dir: models
+            files:
+                diffusion_models/wan2.1_t2v_14B_fp16.safetensors: nahz202/Wan-Video-ComfyOrg/wan2.1_t2v_14B_fp16.safetensors
+                text_encoders/umt5_xxl_fp16.safetensors: nahz202/Wan-Video-ComfyOrg/umt5_xxl_fp16.safetensors
+                vae/wan_2.1_vae.safetensors: nahz202/Wan-Video-ComfyOrg/wan_2.1_vae.safetensors
+                
+    resolution_list: [1088x832, 832x1088, 1280x720, 720x1280, 960x960, 480x832, 832x480, 624x624, 704x544, 544x704]

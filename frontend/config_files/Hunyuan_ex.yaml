@@ -1,0 +1,30 @@
+
+main_name: 腾讯混元AI视频模型
+main_description: 混元-文生视频开源模型，支持中英文提示词输入
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
+
+examples_dict:
+    企鹅邮差: 
+        - A penguin mail carrier in uniform is busily shuttling through the snow and ice of Antarctica.
+        - ''
+    古装女子玩滑板:
+        - A girl in traditional Chinese attire holding a bamboo basket rides a skateboard swiftly through the streets.
+        - ''
+    兔子滑冰:
+        - A little rabbit glides skillfully on the ice wearing skates, the scene filled with joyful winter vibes.
+        - ''
+    月球上的宇航员:
+        - In the distance, an astronaut in a dark blue space suit rides a tall, handsome white horse, walking slowly across the grey, crater-filled lunar surface. The horse’s hooves kick up fine dust that drifts in the thin light. In the background, a giant Earth hangs in the sky, and the cosmos is vast and silent. The low-angle tracking shot enhances the sense of solitude and epic atmosphere.
+        - ''
+    厚涂风-女机械师:
+        - A female mechanic adjusts equipment in a futuristic laboratory, CG thick-painting style.
+        - ''
+    古装女子放孔明灯:
+        - In a Chinese classical setting, under the moonlit courtyard, a woman in Hanfu releases a sky lantern while taking a selfie. Her hair is styled in an ancient bun, and she wears a deep red embroidered robe, her skirt flowing in the wind. She smiles softly at the camera, holding a lantern in one hand and a vintage-style camera in the other. The lantern glows warmly and floats upward. The background shows traditional garden eaves and a starry sky. The scene is dreamy and quiet, captured from a low-angle close-up that focuses on her interaction with the lantern.
+        - ''
+    勾线动画风-狐狸律师:
+        - In a courtroom, a fox lawyer wearing a crisp robe delivers a speech in an outline-animation style.
+        - ''
+    🧹清空输入框:
+        - ''
+        - ''

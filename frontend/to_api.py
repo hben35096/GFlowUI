@@ -77,7 +77,6 @@ def track_ws_progress(ws, prompt_id, workflow, app_path_input):
                 achieve_nodes += len(cache_nodes)
                 if achieve_nodes > 0:
                     print(f"任务总进度：({achieve_nodes}/{node_total})")
-                    # progress_dict = tqdm_progress(progress_dict, all_node_progress, achieve_nodes, node_total) # 不要了
             
             elif t == "progress":
                 v, m = d.get("value"), d.get("max")

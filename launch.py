@@ -5,12 +5,17 @@ import subprocess
 parser = argparse.ArgumentParser(description="GFlowUI 启动脚本", add_help=True)
 parser.add_argument('--back-port', nargs='?', const=8188, default=8188, type=int, help='指定后端服务端口号，不指定则为8188')
 parser.add_argument('--port', nargs='?', const=7860, default=7860, type=int, help='指定前端服务端口号，不指定则为7860') # default 完全不提供 --port 的情况下
+parser.add_argument('--dl-way', nargs='?', const='ms', default='ms', help='指定缺失模型下载方式，如 ms 或 cg')
 args = parser.parse_args()
 
 self_dir = os.path.abspath(os.path.dirname(__file__))
 back_app_path = os.path.join(self_dir, 'backend', 'comfyui_musa')
 launch_keywords = ["Python version:", "Total VRAM", "pytorch version:", "device detected:"]
 
+# 未使用，备用于模型下载方式，需要结合配置表
+if args.dl_way not in ['ms', 'cg']:
+    print(f"⚠️  不支持的下载方式: '{args.dl_way}'，将使用默认方式 'ms'")
+    args.dl_way = 'ms'
 
 def launch_app(command, back_app_path=None):
     app_url = None
@@ -35,7 +40,7 @@ def launch_app(command, back_app_path=None):
                 if app_url:
                     print("✅ 后端启动完成")
                     from frontend import common as grui
-                    demo = grui.gradio_ui(app_url, back_app_path)
+                    demo = grui.gradio_ui(app_url, back_app_path, args.dl_way)
                     demo.launch(server_port=int(args.port),)
             elif any(keyword in line for keyword in launch_keywords):
                 print(line.strip())

@@ -1,0 +1,33 @@
+# 可能要用拆分法，这样可以去拿不同仓库的文件
+LTX-098-I2V-13B:
+    model_type: I2V
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                checkpoints/ltxv-13b-0.9.8-distilled.safetensors: Lightricks/LTX-Video/ltxv-13b-0.9.8-distilled.safetensors
+                text_encoders/t5xxl_fp16.safetensors: AI-ModelScope/stable-diffusion-3-medium/text_encoders/t5xxl_fp16.safetensors
+        cg:
+            basic_dir: models
+            files:
+                checkpoints/ltxv-13b-0.9.8-distilled.safetensors: nahz202/LTX_Video/ltxv-13b-0.9.8-distilled.safetensors
+                text_encoders/t5xxl_fp16.safetensors: nahz202/Flux/t5xxl_fp16.safetensors
+            
+    resolution_list: [768x512, 512x768, 960x640, 640x960, 720x720, 960x960, 832x1104, 1104x832, 1216x704, 704x1216]
+
+# 需要的模型文件是一样的，暂时不要
+# LTX-098-T2V-13B:
+#     model_type: T2V
+#     download_way:
+#         ms:
+#             basic_dir: models
+#             files:
+#                 checkpoints/ltxv-13b-0.9.8-distilled.safetensors: Lightricks/LTX-Video/ltxv-13b-0.9.8-distilled.safetensors
+#                 text_encoders/t5xxl_fp16.safetensors: AI-ModelScope/stable-diffusion-3-medium/text_encoders/t5xxl_fp16.safetensors
+#         cg:
+#             basic_dir: models
+#             files:
+#                 checkpoints/ltxv-13b-0.9.8-distilled.safetensors: nahz202/LTX_Video/ltxv-13b-0.9.8-distilled.safetensors
+#                 text_encoders/t5xxl_fp16.safetensors: nahz202/Flux/t5xxl_fp16.safetensors
+            
+#     resolution_list: [768x512, 512x768, 960x640, 640x960, 720x720, 960x960, 832x1104, 1104x832, 1216x704, 704x1216]

@@ -1,0 +1,58 @@
+
+main_name: LTX • 视频生成
+main_description: LTX-Video 模型支持60秒长视频，成速度快、硬件要求低
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
+
+examples_dict:
+    无人机航拍: 
+        - A drone quickly rises through a bank of morning fog, revealing a pristine alpine lake surrounded by snow-capped mountains. The camera glides forward over the glassy water, capturing perfect reflections of the peaks. As it continues, the perspective shifts to reveal a lone wooden cabin with a curl of smoke from its chimney, nestled among tall pines at the lake is edge. The final shot tracks upward rapidly, transitioning from intimate to epic as the full mountain range comes into view, bathed in the golden light of sunrise breaking through scattered clouds.
+        - low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/drone.jpg
+    咖啡馆聊天:
+        - |
+            In an artsy cafe, a woman with shoulder-length brown curls smiles at a blonde sitting opposite her. Her smile was gentle and sincere, as if she agreed with the joke he had just told. The brown-haired woman wore a form-fitting black leather jacket, which made her look stylish and personal. On closer inspection, an almost imperceptible mole can be seen on her right cheek, which adds a unique charm to her face.
+            The light in the cafe mainly came from the sun that was gradually sinking outside the French window. The warm sunset shone on their bodies through the glass, giving the whole scene a layer of golden luster. This natural light contrasts with the warm interior lighting to create a comfortable and romantic atmosphere. The cafe was playing soft jazz music, adding to the afternoon is comfort.
+            A few cups of freshly brewed coffee were placed on the table in front of the two women. The rising heat was especially attractive in the warm sunlight. Their lighthearted conversation, occasionally accompanied by a chuckle, constitutes the most moving part of the scene
+        - |
+            low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/coffee.jpg
+    酒店美女看手机:
+        - In the warm and quiet indoor space, a long - haired woman with an elegant temperament stands quietly. Her long hair, like a waterfall, falls smoothly over her shoulders, exuding a unique charm. At this moment, she is holding a mobile phone in her hand. After carefully reading the information displayed on the phone screen, the corners of her mouth slightly rise involuntarily, and a bright and charming smile quietly blooms on her face. That smile seems to carry a hint of sweetness and joy.
+        - low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/phone.jpg
+    傍晚街头漫步:
+        - |
+            A young couple strolls down a narrow cobblestone street as twilight settles over the city. The street is lined with warm-toned brick buildings, their windows glowing softly with early evening light. The man, wearing a dark wool coat and scarf, gently holds the hand of the woman beside him. She wears a long beige trench coat that sways with each step. Their shadows stretch out behind them, elongated by the orange streetlamps that flicker to life one by one. A gentle breeze causes the leaves from a nearby tree to rustle and fall. The atmosphere is quiet, serene, and filled with an unspoken intimacy.
+        - |
+            low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/street.jpg
+    图书馆阅读时光:
+        - |
+            In a spacious, softly lit library, a young woman with round glasses sits at a wooden reading table, completely absorbed in a thick hardcover book. Shelves filled with colorful, well-worn books stretch into the background, and a tall window casts dappled sunlight onto the aged floorboards. She wears a cozy gray sweater and has her hair tied up in a loose bun. A half-finished cup of tea sits next to her book, steam curling lazily upward. Her eyes move steadily across the pages, and her expression is calm and thoughtful, as if she is lost in another world.
+        - |
+            low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/library.jpg
+    沙滩黄昏自拍:
+        - |
+            On a quiet beach at dusk, a woman with long wavy hair holds her phone up and takes a selfie with the sea behind her. The golden hour light paints her face with a soft glow, and her hair catches the breeze gently. She wears a flowing white dress that moves like the waves behind her. The background shows a vast ocean stretching to the horizon, with the sky blending from warm orange to soft pink. Her expression is playful and full of life, capturing a carefree moment by the sea.
+        - |
+            low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/beach.jpg
+    冬日城市夜景:
+        - |
+            A panoramic night view of a bustling city during winter. Snowflakes fall slowly under the glow of neon lights and streetlamps. People in warm coats walk briskly on the sidewalks, their breath visible in the crisp air. A woman with a bright red scarf stands beside a steaming food cart, holding a cup of hot chocolate and watching the traffic pass. Tall glass buildings reflect the colorful lights, and festive decorations hang along the streets, adding a touch of warmth to the cold evening. The whole scene feels alive, vibrant, and cozy despite the chill.
+        - |
+            low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/night.jpg
+    乡村黄昏女孩与猫:
+        - |
+            A girl with short auburn hair and a canvas satchel walks along a dirt path winding through rolling green hills. The golden light of sunset bathes the landscape in warmth, and distant wind turbines slowly turn atop the hills. A small steam-powered train chugs gently in the background, its trail of smoke curling into the amber sky. She passes by a patch of giant sunflowers towering over her, their heads gently swaying in the breeze. A fluffy white cat follows quietly at her heels. The overall scene is filled with gentle motion, magical realism, and a nostalgic sense of quiet discovery.
+        - |
+            low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+        - frontend/config_files/examples/village.jpg
+    🧹清空输入框:
+        - ''
+        - ''
+        - null
+
+        
