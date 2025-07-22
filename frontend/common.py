@@ -170,7 +170,7 @@ def video_generate(launch_state, img_display_state, model, prompt_input, neg_pro
         for generate_file_path in output_file_path_list:
             filename = os.path.basename(generate_file_path)
             target_path = os.path.join(output_dir, filename)
-            shutil.move(generate_file_path, target_path)
+            shutil.copy(generate_file_path, target_path)
             if os.path.exists(target_path):
                 print("生成文件已保存到：", target_path)
                 all_output_file_path.append(target_path)
