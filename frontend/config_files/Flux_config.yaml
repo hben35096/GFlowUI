@@ -1,0 +1,36 @@
+Flux-T2I-FP16:
+    model_type: T2I
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                unet/flux1-dev_unet.safetensors: black-forest-labs/FLUX.1-dev/flux1-dev.safetensors
+                text_encoders/clip_l.safetensors: Comfy-Org/HunyuanVideo_repackaged/split_files/text_encoders/clip_l.safetensors
+                text_encoders/t5xxl_fp16.safetensors: AI-ModelScope/stable-diffusion-3-medium/text_encoders/t5xxl_fp16.safetensors
+                vae/ae.safetensors: black-forest-labs/FLUX.1-dev/ae.safetensors
+        cg:
+            basic_dir: models
+            files:
+                unet/flux1-dev_unet.safetensors: nahz202/Flux/flux1-dev_unet.safetensors
+                text_encoders/clip_l.safetensors: nahz202/Flux/clip_l.safetensors
+                text_encoders/t5xxl_fp16.safetensors: nahz202/Flux/t5xxl_fp16.safetensors
+                vae/ae.safetensors: nahz202/Flux/ae.safetensors
+            
+    resolution_list: [1024x1024, 1104x944, 944x1104, 1184x880, 880x1184, 1248x832, 832x1248, 1328x800, 800x1328, 1392x752, 752x1392, 1456x720, 720x1456, 1504x688, 688x1504, 1568x672, 672x1568]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

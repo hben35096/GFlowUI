@@ -1,0 +1,35 @@
+main_name: Flux • 图像生成模型
+main_description: 黑森林实验室（Black-Forest-Labs）开源的图像生成模型，是当前表现最优秀的图像生成模型之一
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
+
+examples_dict:
+    室内美女看手机: 
+        - In the warm and quiet indoor space, a long - haired woman with an elegant temperament stands quietly. Her long hair, like a waterfall, falls smoothly over her shoulders, exuding a unique charm. At this moment, she is holding a mobile phone in her hand. After carefully reading the information displayed on the phone screen, the corners of her mouth slightly rise involuntarily, and a bright and charming smile quietly blooms on her face. That smile seems to carry a hint of sweetness and joy.
+        - ''
+    角色设定图: 
+        - A character sheet of a female teacher in different poses and angles, including front view, side view, and back view. The sheet should showcase various poses typical for a teacher, such as writing on a board, standing with a book, and interacting with students. Use a professional yet approachable style, with attention to detail in her clothing and accessories. Include soft, muted colors and gentle linework to highlight her warm and friendly demeanor.
+        - ''
+    睡莲中间的手机:
+        - "A product image of an iPhone standing upright in a pond filled with lily pads. The iPhone's screen shows a view of the pond, creating a recursive visual effect. The background features blurred green plants and trees, with soft, natural lighting. The scene is tranquil and picturesque, emphasizing the phone's high-quality display and camera capabilities, ideal for use in a tech blog or product design portfolio."
+        - ''
+    美食摄影-橙子:
+        - Sliced oranges, ice cubes, mint leaves, scattered on blue background, vibrant colors, creative food photography, likely DSLR camera, shallow depth of field, studio lighting setup
+        - ''
+    在长城自拍:
+        - IMG_0314.cr2:selfie on The Great Wall
+        - ''
+    蓝色花瓣中的女子:
+        - dream scene, fantasy, romance, hazy, a woman in a white gauze dress surrounded by blue petals, fashion magazine cover, asian, fair skin
+        - ''
+    3D风星球:
+        - "A detailed 3D rendering: an alien world with a mysterious halo, bright yellow planet, and deep blue sky. The scene is shrouded in soft light, and the planet's craters and surface details are clearly visible"
+        - ''
+    皮克斯风白雪公主:
+        - A Pixar animation character of a Snow White. pixar-style, studio anime, Disney, high-quality, background
+        - ''
+    水墨双鱼:
+        - A traditional Chinese ink painting style with red and black fish swimming in green and white water, featuring flowing lines and splashes, minimalist and elegant, capturing the dynamic movement of fish.
+        - ''
+    🧹清空输入框:
+        - ''
+        - ''

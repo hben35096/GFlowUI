@@ -29,9 +29,22 @@ examples_norm = [t for t in example_list]
 
 WAN_MODELS = ["Wan2.1-T2V-1.3B-480P", "Wan2.1-T2V-14B-720P"]
 HUNYUAN_MODELS = ["HunyuanVideo-T2V-720P"]
+FLUX_MODELS = ["Flux-T2I-FP16"]
+
+NO_CFG_MODELS = HUNYUAN_MODELS + FLUX_MODELS
+
+
+KSAMPLER_NAMES = [
+    "euler", "euler_cfg_pp", "euler_ancestral", "euler_ancestral_cfg_pp", "heun", "heunpp2","dpm_2", "dpm_2_ancestral",
+    "lms", "dpm_fast", "dpm_adaptive", "dpmpp_2s_ancestral", "dpmpp_2s_ancestral_cfg_pp", "dpmpp_sde", "dpmpp_sde_gpu",
+    "dpmpp_2m", "dpmpp_2m_cfg_pp", "dpmpp_2m_sde", "dpmpp_2m_sde_gpu", "dpmpp_3m_sde", "dpmpp_3m_sde_gpu", "ddpm", "lcm",
+    "ipndm", "ipndm_v", "deis", "res_multistep", "res_multistep_cfg_pp", "res_multistep_ancestral", "res_multistep_ancestral_cfg_pp",
+    "gradient_estimation", "gradient_estimation_cfg_pp", "er_sde", "seeds_2", "seeds_3"
+]
+SAMPLER_NAMES = KSAMPLER_NAMES + ["ddim", "uni_pc", "uni_pc_bh2"]
 
 # 这里定义一下叫法
-if model_name_a in HUNYUAN_MODELS:
+if model_name_a in NO_CFG_MODELS:
     cfg_name = '条件引导系数'
     neg_prompt_display = False
 else:
@@ -47,11 +60,8 @@ def img_display(model_name):
         
 input_img_display = img_display(model_name_a)
 
-
-
 def clear_outputs():
     return None
-
 
 def model_switch(model_name=None):
     info_t = f"已选择模型 {model_name}"
@@ -79,8 +89,9 @@ def get_workflow(model, scale):
     height = int(height_str)
     return workflow, width, height
 
-def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, input_imgs=None):
+def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, input_imgs=None, sampler_name=None):
     workflow, width, height = get_workflow(model, scale)
+    # print("看看采样器名称：", sampler_name)
 
     if model in WAN_MODELS:
         workflow["6"]["inputs"]["text"] = prompt_input
@@ -132,24 +143,31 @@ def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, leng
         workflow["70"]["inputs"]["height"] = height
         workflow["70"]["inputs"]["length"] = length
         workflow["70"]["inputs"]["batch_size"] = batch_size
+    elif model == "Flux-T2I-FP16":
+        workflow["6"]["inputs"]["text"] = prompt_input
+        workflow["17"]["inputs"]["steps"] = steps
+        workflow["25"]["inputs"]["noise_seed"] = seed
+        workflow["26"]["inputs"]["guidance"] = cfg
+        
+        workflow["27"]["inputs"]["width"] = width
+        workflow["27"]["inputs"]["height"] = height
+        workflow["27"]["inputs"]["batch_size"] = batch_size
+        
+        workflow["16"]["inputs"]["sampler_name"] = sampler_name
 
     return workflow
 
-def video_generate(launch_state, img_display_state, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size, input_imgs=None):
+
+
+def video_generate(launch_state, img_display_state, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size, input_imgs=None, sampler_name=None):
     from frontend import to_api
     importlib.reload(to_api) # 实时更改生效，以后就不需要了
 
     app_url, back_app_path, dl_way = launch_state
-
-    # if input_img_state and input_imgs is None:
-    #     error_inf = "当前模式必须上传参考图片！"
-    #     gr.Warning(error_inf, duration=4)
-    #     return None
     
     workflow_model_name = model
-    if input_imgs is None:
+    if model == "LTX-098-I2V-13B" and input_imgs is None:
         workflow_model_name = "LTX-098-T2V-13B"
-        # 这样调用文生图工作流
 
     output_dir = os.path.join(os.getcwd(), "outputs")
     os.makedirs(output_dir, exist_ok=True)
@@ -163,7 +181,7 @@ def video_generate(launch_state, img_display_state, model, prompt_input, neg_pro
         if i > 0:
             seed = random.randint(1, 999999999999999)
 
-        workflow = edit_workflow(workflow_model_name, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, input_imgs)
+        workflow = edit_workflow(workflow_model_name, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, input_imgs, sampler_name)
         
         output_file_path_list = to_api.implement(workflow, app_url, back_app_path)
         # 要复制到工作目录才行
@@ -222,10 +240,11 @@ def gradio_ui(app_url, back_app_path, dl_way):
                 model = gr.Dropdown(choices=model_names, label="模型")
                 with gr.Group():
                     scale = gr.Dropdown(choices=resolution_list, label="分辨率(宽×高)",)
-                    steps = gr.Slider(value=30, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
-                    cfg = gr.Slider(value=1.0, label=cfg_name, maximum=32, step=0.1)
-                    length = gr.Slider(value=97, label='生成帧数', minimum=25, maximum=1441, step=24)
-                    batch_size = gr.Slider(value=1, label='单批数量', maximum=16, step=1, interactive=False, info="当前模式下批次大小不可修改") # 禁用吧
+                    steps = gr.Slider(value=20, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
+                    cfg = gr.Slider(value=2.5, label=cfg_name, maximum=32, step=0.1)
+                    length = gr.Slider(value=97, label='生成帧数', minimum=25, maximum=1441, step=24, visible=False) # 用不着了
+                    sampler_name = gr.Dropdown(choices=SAMPLER_NAMES, label="采样器",)
+                    batch_size = gr.Slider(value=1, label='单批数量', minimum=1, maximum=16, step=1, interactive=True) # 禁用吧 , info="当前模式下批次大小不可修改"
                     
                 with gr.Row():
                     seed = gr.Number(value=0, label='随机种子 Seed', precision=0, step=1, min_width=140, scale=6)
@@ -242,7 +261,7 @@ def gradio_ui(app_url, back_app_path, dl_way):
                     )
     
                     with gr.Column(scale=1, min_width=160): # , min_width=160
-                        generate_btn = gr.Button("生成视频", variant="primary", elem_classes="custom-btn")
+                        generate_btn = gr.Button("生 成", variant="primary", elem_classes="custom-btn")
                         gr.Markdown("##### 批量生成：")
                         queue_size = gr.Number(value=1, label='列队数量', precision=0, minimum=1, step=1, scale=1, container=False, min_width=126)
                 with gr.Column() as examples_container:
@@ -250,10 +269,10 @@ def gradio_ui(app_url, back_app_path, dl_way):
                     pass
                 with gr.Row():
                     input_img = gr.Image(label="上传参考图-如果不上传参考图，则采用文生视频模式", type="filepath", height=432, visible=input_img_display)  # 暂时不显示，也不调用
-                    all_output = gr.Gallery(label="生成结果", columns=3, object_fit="contain", height=432, selected_index=0, preview=True, scale=2)
+                    all_output = gr.Gallery(label="生成结果", columns=3, object_fit="contain", interactive=False, height=432, selected_index=0, preview=True, scale=2)
 
         with examples_container:
-            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()),)  # 
+            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()),)
                                     
         launch_state = gr.State(value=(app_url, back_app_path, dl_way)) # 多个参数放这里方便传递
         img_display_state = gr.State(input_img_display) # 用它来记录吧，别用全局，其实最后没用到
@@ -267,7 +286,7 @@ def gradio_ui(app_url, back_app_path, dl_way):
         
         generate_kwargs = {
             "fn": video_generate,
-            "inputs": [launch_state, img_display_state, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size, input_img],
+            "inputs": [launch_state, img_display_state, model, prompt_input, neg_prompt_input, scale, steps, cfg, length, batch_size, seed, queue_size, input_img] + [sampler_name],
             "outputs": [all_output]
         }
         
@@ -285,4 +304,3 @@ def gradio_ui(app_url, back_app_path, dl_way):
 
 if __name__ == "__main__":
     demo.launch()
-
