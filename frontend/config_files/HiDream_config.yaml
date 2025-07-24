@@ -1,0 +1,43 @@
+HiDream-I1-T2I:
+    model_type: T2I
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                text_encoders/llama_3.1_8b_Instruct_fp16.safetensors: Astro202/Llama-3.1-8B-Instruct-fp16/llama_3.1_8b_Instruct_fp16.safetensors
+                text_encoders/clip_l_hidream.safetensors: Comfy-Org/HiDream-I1_ComfyUI/split_files/text_encoders/clip_l_hidream.safetensors
+                text_encoders/clip_g_hidream.safetensors: Comfy-Org/HiDream-I1_ComfyUI/split_files/text_encoders/clip_g_hidream.safetensors
+                text_encoders/t5xxl_fp16.safetensors: AI-ModelScope/stable-diffusion-3-medium/text_encoders/t5xxl_fp16.safetensors
+                diffusion_models/hidream_i1_dev_fp8.safetensors: Comfy-Org/HiDream-I1_ComfyUI/split_files/diffusion_models/hidream_i1_dev_fp8.safetensors
+                vae/ae.safetensors: Comfy-Org/HiDream-I1_ComfyUI/split_files/vae/ae.safetensors
+        cg:
+            basic_dir: models
+            files:
+                text_encoders/llama_3.1_8b_Instruct_fp16.safetensors: nahz202/HiDream-I1_ComfyUI/llama_3.1_8b_Instruct_fp16.safetensors
+                text_encoders/clip_l_hidream.safetensors: nahz202/HiDream-I1_ComfyUI/clip_l_hidream.safetensors
+                text_encoders/clip_g_hidream.safetensors: nahz202/HiDream-I1_ComfyUI/clip_g_hidream.safetensors
+                text_encoders/t5xxl_fp16.safetensors: nahz202/Flux/t5xxl_fp16.safetensors
+                diffusion_models/hidream_i1_dev_fp8.safetensors: nahz202/HiDream-I1_ComfyUI/hidream_i1_dev_fp8.safetensors
+                vae/ae.safetensors: nahz202/Flux/ae.safetensors
+            
+    resolution_list: [1024x1024, 1104x944, 944x1104, 1184x880, 880x1184, 1248x832, 832x1248, 1328x800, 800x1328, 1392x752, 752x1392, 1456x720, 720x1456, 1504x688, 688x1504, 1568x672, 672x1568]
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

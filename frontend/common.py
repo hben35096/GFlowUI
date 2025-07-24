@@ -31,9 +31,12 @@ WAN_MODELS = ["Wan2.1-T2V-1.3B-480P", "Wan2.1-T2V-14B-720P"]
 HUNYUAN_MODELS = ["HunyuanVideo-T2V-720P"]
 FLUX_MODELS = ["Flux-T2I-FP16"]
 SD35_MODELS = ["SD35-Large-T2I-FP16"]
+LTX_MODELS = ["LTX-098-I2V-13B", "LTX-098-T2V-13B"]
+HID_MODELS = ["HiDream-I1-T2I"]
 
-NO_CFG_MODELS = HUNYUAN_MODELS + FLUX_MODELS
-NO_NEG_MODELS = HUNYUAN_MODELS + FLUX_MODELS + SD35_MODELS
+NO_CFG_MODELS = HUNYUAN_MODELS + FLUX_MODELS + HID_MODELS
+NO_NEG_MODELS = HUNYUAN_MODELS + FLUX_MODELS + SD35_MODELS + HID_MODELS
+# NO_SHIFT_MODELS = WAN_MODELS + HUNYUAN_MODELS + FLUX_MODELS + SD35_MODELS + LTX_MODELS
 
 
 KSAMPLER_NAMES = [
@@ -49,7 +52,10 @@ SAMPLER_NAMES = KSAMPLER_NAMES + ["ddim", "uni_pc", "uni_pc_bh2"]
 def get_switch_and_name(model_name):
     cfg_name = 'CFG'
     if model_name in NO_CFG_MODELS:
-        cfg_name = '条件引导系数'
+        if model_name in HID_MODELS:
+            cfg_name = '模型采样位移'
+        else:
+            cfg_name = '条件引导系数'
         
     neg_prompt_display = True
     if model_name in NO_NEG_MODELS:
@@ -174,9 +180,18 @@ def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, leng
         workflow["53"]["inputs"]["batch_size"] = batch_size
 
         workflow["3"]["inputs"]["sampler_name"] = sampler_name
+    elif model == "HiDream-I1-T2I":
+        workflow["16"]["inputs"]["text"] = prompt_input
+        workflow["3"]["inputs"]["steps"] = steps
+        workflow["3"]["inputs"]["seed"] = seed
+        workflow["70"]["inputs"]["shift"] = cfg
 
+        workflow["53"]["inputs"]["width"] = width
+        workflow["53"]["inputs"]["height"] = height
+        workflow["53"]["inputs"]["batch_size"] = batch_size
+        workflow["3"]["inputs"]["sampler_name"] = sampler_name
 
-    
+        
 
     return workflow
 
@@ -263,11 +278,12 @@ def gradio_ui(app_url, back_app_path, dl_way):
                 model = gr.Dropdown(choices=model_names, label="模型")
                 with gr.Group():
                     scale = gr.Dropdown(choices=resolution_list, label="分辨率(宽×高)",)
-                    steps = gr.Slider(value=20, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
-                    cfg = gr.Slider(value=5.0, label=cfg_name, maximum=32, step=0.1)
+                    # sampling_shift = gr.Slider(value=6.0, label='模型采样位移', minimum=0, maximum=64, step=0.1, visible=sampling_shift_display)
+                    steps = gr.Slider(value=26, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
+                    cfg = gr.Slider(value=6.0, label=cfg_name, maximum=32, step=0.1)
                     length = gr.Slider(value=97, label='生成帧数', minimum=25, maximum=1441, step=24, visible=False) # 用不着了
-                    sampler_name = gr.Dropdown(choices=SAMPLER_NAMES, label="采样器",)
-                    batch_size = gr.Slider(value=1, label='单批数量', minimum=1, maximum=16, step=1, interactive=True) # 禁用吧 , info="当前模式下批次大小不可修改"
+                    sampler_name = gr.Dropdown(choices=SAMPLER_NAMES, value="euler", label="采样器",)
+                    batch_size = gr.Slider(value=1, label='单批数量', minimum=1, maximum=2, step=1, interactive=True) # 禁用吧 , info="当前模式下批次大小不可修改"
                     
                 with gr.Row():
                     seed = gr.Number(value=0, label='随机种子 Seed', precision=0, step=1, min_width=140, scale=6)
@@ -295,7 +311,7 @@ def gradio_ui(app_url, back_app_path, dl_way):
                     all_output = gr.Gallery(label="生成结果", columns=3, object_fit="contain", interactive=False, height=432, selected_index=0, preview=True, scale=2)
 
         with examples_container:
-            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()),)
+            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()), examples_per_page=20)
                                     
         launch_state = gr.State(value=(app_url, back_app_path, dl_way)) # 多个参数放这里方便传递
         img_display_state = gr.State(input_img_display) # 用它来记录吧，别用全局，其实最后没用到
