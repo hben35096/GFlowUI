@@ -9,5 +9,8 @@
 # model_config_file: LTX_config.yaml
 # ex_config_file: LTX_ex.yaml
 
-model_config_file: Flux_config.yaml
-ex_config_file: Flux_ex.yaml
+# model_config_file: Flux_config.yaml
+# ex_config_file: Flux_ex.yaml
+
+model_config_file: SD35_config.yaml
+ex_config_file: SD35_ex.yaml

@@ -1,0 +1,39 @@
+SD35-Large-T2I-FP16:
+    model_type: T2I
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                text_encoders/clip_l.safetensors: Comfy-Org/stable-diffusion-3.5-fp8/text_encoders/clip_l.safetensors
+                text_encoders/clip_g.safetensors: Comfy-Org/stable-diffusion-3.5-fp8/text_encoders/clip_g.safetensors
+                text_encoders/t5xxl_fp16.safetensors: Comfy-Org/stable-diffusion-3.5-fp8/text_encoders/t5xxl_fp16.safetensors
+                checkpoints/sd3.5_large.safetensors: muse/sd35_large/sd3.5_large.safetensors
+        cg:
+            basic_dir: models
+            files:
+                text_encoders/clip_l.safetensors: nahz202/SD3.5/clip_l.safetensors
+                text_encoders/clip_g.safetensors: nahz202/SD3.5/clip_g.safetensors
+                text_encoders/t5xxl_fp16.safetensors: nahz202/Flux/t5xxl_fp16.safetensors
+                checkpoints/sd3.5_large.safetensors: nahz202/SD3.5/sd3.5_large.safetensors
+            
+    resolution_list: [1024x1024, 1104x944, 944x1104, 1184x880, 880x1184, 1248x832, 832x1248, 1328x800, 800x1328, 1392x752, 752x1392, 1456x720, 720x1456, 1504x688, 688x1504, 1568x672, 672x1568]
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

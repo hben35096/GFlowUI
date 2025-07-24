@@ -1,0 +1,35 @@
+main_name: SD3.5-Large • 图像生成模型
+main_description: StableDiffusion 3.5 是曾缔造 SD 1.5 辉煌的 Stability-AI 最新模型，真人效果不尽如人意，但在艺术风格上仍有可取之处
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
+
+examples_dict:
+    三个药水瓶: 
+        - "photo of three potions: the first potion is blue with the label 'MANA', the second potion is red with the label 'HEALTH', the third potion is green with the label 'POlSON'. Old apothecary."
+        - ''
+    沙滩时钟: 
+        - tilt-shift photo of Moonlit beaches, clock ticks away humorously. selective focus, miniature effect, blurred background, highly detailed, vibrant, perspective control
+        - ''
+    折纸风蜥蜴:
+        - "origami style illustration of a gentle giant lizard,scales shimmering like opals,surrounded by iridescent butterflies,misty forest atmosphere,whimsical,dreamlike quality . paper art, pleated paper, folded, origami art, pleats, cut and fold, centered composition"
+        - ''
+    美食摄影-橙子:
+        - Sliced oranges, ice cubes, mint leaves, scattered on blue background, vibrant colors, creative food photography, likely DSLR camera, shallow depth of field, studio lighting setup
+        - ''
+    女性头像:
+        - "(masterpiece), (best quality), (ultra-detailed), a fitness woman,Side braid,Auburn,overhead angle,beneath the roots of the world tree,style by Sir James Guthrie,(masterpiece best quality ultra-detailed best shadow amazing realistic picture),Polaroid,hard light, illustration, disheveled hair, detailed eyes, perfect composition, moist skin, intricate details, earrings, by wlop, expressionist . raw, emotional, dynamic, distortion for emotional effect, vibrant, use of unusual colors, detailed"
+        - ''
+    蓝色花瓣中的女子:
+        - dream scene, fantasy, romance, hazy, a woman in a white gauze dress surrounded by blue petals, fashion magazine cover, asian, fair skin
+        - ''
+    3D风星球:
+        - "A detailed 3D rendering: an alien world with a mysterious halo, bright yellow planet, and deep blue sky. The scene is shrouded in soft light, and the planet's craters and surface details are clearly visible"
+        - ''
+    皮克斯风白雪公主:
+        - A Pixar animation character of a Snow White. pixar-style, studio anime, Disney, high-quality, background
+        - ''
+    水墨双鱼:
+        - A traditional Chinese ink painting style with red and black fish swimming in green and white water, featuring flowing lines and splashes, minimalist and elegant, capturing the dynamic movement of fish.
+        - ''
+    🧹清空输入框:
+        - ''
+        - ''

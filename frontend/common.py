@@ -30,8 +30,10 @@ examples_norm = [t for t in example_list]
 WAN_MODELS = ["Wan2.1-T2V-1.3B-480P", "Wan2.1-T2V-14B-720P"]
 HUNYUAN_MODELS = ["HunyuanVideo-T2V-720P"]
 FLUX_MODELS = ["Flux-T2I-FP16"]
+SD35_MODELS = ["SD35-Large-T2I-FP16"]
 
 NO_CFG_MODELS = HUNYUAN_MODELS + FLUX_MODELS
+NO_NEG_MODELS = HUNYUAN_MODELS + FLUX_MODELS + SD35_MODELS
 
 
 KSAMPLER_NAMES = [
@@ -43,13 +45,19 @@ KSAMPLER_NAMES = [
 ]
 SAMPLER_NAMES = KSAMPLER_NAMES + ["ddim", "uni_pc", "uni_pc_bh2"]
 
-# 这里定义一下叫法
-if model_name_a in NO_CFG_MODELS:
-    cfg_name = '条件引导系数'
-    neg_prompt_display = False
-else:
+# 迟早要弄成配置表
+def get_switch_and_name(model_name):
     cfg_name = 'CFG'
+    if model_name in NO_CFG_MODELS:
+        cfg_name = '条件引导系数'
+        
     neg_prompt_display = True
+    if model_name in NO_NEG_MODELS:
+        neg_prompt_display = False
+        
+    return cfg_name, neg_prompt_display
+
+cfg_name, neg_prompt_display = get_switch_and_name(model_name_a)
 
 def img_display(model_name):
     model_type = model_config[model_name].get('model_type')
@@ -154,6 +162,21 @@ def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, leng
         workflow["27"]["inputs"]["batch_size"] = batch_size
         
         workflow["16"]["inputs"]["sampler_name"] = sampler_name
+        
+    elif model == "SD35-Large-T2I-FP16":
+        workflow["16"]["inputs"]["text"] = prompt_input
+        workflow["3"]["inputs"]["steps"] = steps
+        workflow["3"]["inputs"]["seed"] = seed
+        workflow["3"]["inputs"]["cfg"] = cfg
+        
+        workflow["53"]["inputs"]["width"] = width
+        workflow["53"]["inputs"]["height"] = height
+        workflow["53"]["inputs"]["batch_size"] = batch_size
+
+        workflow["3"]["inputs"]["sampler_name"] = sampler_name
+
+
+    
 
     return workflow
 
@@ -241,7 +264,7 @@ def gradio_ui(app_url, back_app_path, dl_way):
                 with gr.Group():
                     scale = gr.Dropdown(choices=resolution_list, label="分辨率(宽×高)",)
                     steps = gr.Slider(value=20, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
-                    cfg = gr.Slider(value=2.5, label=cfg_name, maximum=32, step=0.1)
+                    cfg = gr.Slider(value=5.0, label=cfg_name, maximum=32, step=0.1)
                     length = gr.Slider(value=97, label='生成帧数', minimum=25, maximum=1441, step=24, visible=False) # 用不着了
                     sampler_name = gr.Dropdown(choices=SAMPLER_NAMES, label="采样器",)
                     batch_size = gr.Slider(value=1, label='单批数量', minimum=1, maximum=16, step=1, interactive=True) # 禁用吧 , info="当前模式下批次大小不可修改"
