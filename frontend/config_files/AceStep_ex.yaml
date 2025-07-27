@@ -1,0 +1,448 @@
+main_name: ACE-Step • 音乐生成模型
+main_description: ACE-Step 是 ACE Studio 和 StepFun 联合推出的一款开源音乐生成基础模型，专为高效、连贯、可控的音乐创作而设计。生成速度比传统大模型快约 15 倍，能快速产出高质量音乐。
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
+
+examples_dict:
+    女声-萌系高科技: 
+        - kawaii, techno, soft female vocals, jpop, idol, fennec girl
+        - |
+            [inst]
+            
+            [verse]
+            ふわふわ　おみみが
+            ゆれるよ　かぜのなか
+            きらきら　あおいめ
+            みつめる　せかいを
+            
+            [verse]
+            ふわふわ　しっぽは
+            おおきく　ゆれるよ
+            きんいろ　かみのけ
+            なびくよ　かぜのなか
+            
+            [verse]
+            コンフィーユーアイの
+            まもりびと
+            ピンクの　セーターで
+            えがおを　くれるよ
+            
+            あおいろ　スカートと
+            くろいコート　きんのもよう
+            やさしい　ひかりが
+            つつむよ　フェネックガール
+            
+            [verse]
+            ふわふわ　おみみで
+            きこえる　こころの　こえ
+            だいすき　フェネックガール
+            いつでも　そばにいるよ
+    女声-萌系梦幻轻柔: 
+        - kawaii, dreamy, soft vocals, jpop, idol, fennec girl, pastel
+        - |
+            [inst]
+            
+            [verse]
+            ふわり　おみみが
+            よるかぜに　ゆれてる
+            あおぞら　みあげて
+            そっと　うたうの
+            
+            [verse]
+            しっぽも　やさしく
+            こもりうた　かなでる
+            きんいろの　かみは
+            つきの　しずくみたい
+            
+            [verse]
+            やみを　てらしてく
+            ちいさな　ひかりで
+            フェネックガールは
+            ゆめの　しゅごしゃさ
+            
+            ピンクのカーディで
+            こころを　あたため
+            あおいリボンには
+            きぼうが　こめられる
+            
+            [verse]
+            きみの　こえだけ
+            とどくよ　ねむるとき
+            だいすき　フェネックガール
+            ゆめでも　あえるから
+    女声-萌系未来赛博: 
+        - kawaii, techno, futuristic jpop, idol, cyber fennec girl
+        - |
+            [inst]
+            
+            [verse]
+            ひかりの　おみみが
+            ビームで　とぶように
+            でんぱに　ゆれるね
+            フェネック　シグナル
+            
+            [verse]
+            ゴールドのしっぽが
+            うちゅうを　スキャンする
+            メタルのハートで
+            あいを　ひろうの
+            
+            [verse]
+            エレクトリックボイス
+            きらめく　バイナル
+            ピンクの　ユニットで
+            そらを　てらしてく
+            
+            あおのスーツには
+            フロウする　コードね
+            フェネックガールは
+            みらいの　アイドルさ
+            
+            [verse]
+            ふるえる　こえまで
+            とどくよ　かなたへ
+            だいすき　フェネックガール
+            わたしの　スターライト
+    女声-奇幻哥特女战士: 
+        - jpop, dark fantasy, idol, gothic, fennec warrior girl, sword and magic
+        - |
+            [inst]
+            
+            [verse]
+            かぜさえ　きりさく
+            おみみの　やいば
+            やみに　ひそむもの
+            みつめる　あおいめ
+            
+            [verse]
+            むきだしの　しっぽ
+            たたかいの　ほのお
+            きんいろの　ひかりが
+            やみを　てらすよ
+            
+            [verse]
+            くろい　コートに
+            しるべの　まどう
+            ルーンと　いっしょに
+            うたごえ　ひびく
+            
+            つきの　ひかりに
+            まもられた　しょうじょ
+            えいえんの　ちかい
+            たたかう　フェネックガール
+            
+            [verse]
+            ゆるがない　おもい
+            こころで　ささやく
+            えいえんに　きみの
+            みかたに　なるよ
+    女声-AI故障风:
+        - techno, glitch pop, futuristic, AI idol, fennec-type android girl
+        - |
+            [inst]
+            
+            [verse]
+            データが　はじける
+            おみみは　センサー
+            かぜの　なかから
+            こえを　とりだす
+            
+            [verse]
+            コードで　うごく
+            しっぽの　モーション
+            ゴールデン　モジュール
+            ゆれる　せかい
+            
+            [verse]
+            ぴんくな　RAMに
+            やさしさ　インストール
+            スマイル　ルーティン
+            じこうしてるよ
+            
+            ゼロから　うまれた
+            よるの　ひかり
+            きみだけ　まもる
+            フェネックの　アンドロイド
+            
+            [verse]
+            こころの　ウェーブフォーム
+            きみに　つながる
+            だいすき　フェネックガール
+            けっして　さびしくないよ
+    男声-帅气骑士:
+        - jpop, cool male idol, desert knight, fennec boy, soft vocals
+        - |
+            [inst]
+            
+            [verse]
+            [ja]かぜの　ささやき
+            [ja]とおくで　きいたよ
+            [ja]すなの　うたごえ
+            [ja]こころを　ふるわせた
+            
+            [verse]
+            [ja]しっぽが　ゆれてる
+            [ja]たたかいの　あとで
+            [ja]きんの　ひかりが
+            [ja]ぼくを　つつんだ
+            
+            [verse]
+            [ja]ピンクの　バンダナ
+            [ja]まもりの　しるしさ
+            [ja]だれより　つよくて
+            [ja]だれより　やさしい
+            
+            [ja]きみを　さがして
+            [ja]このそら　こえてく
+            [ja]フェネックボーイは
+            [ja]そっと　てを　にぎるよ
+    男声-民谣温暖怀旧:
+        - japanese folk, mature male vocals, acoustic guitar, soft ballad, fennec man, warm and nostalgic
+        - |
+            [inst]
+            
+            [verse]
+            [ja]ふわり　かぜがふく
+            [ja]すなちを　こえてきた
+            [ja]ふりむく　おみみが
+            [ja]とおい　そらをきく
+            
+            [verse]
+            [ja]しっぽが　ゆれるたび
+            [ja]こころが　なごむんだ
+            [ja]きんいろ　ひざしには
+            [ja]きみの　えがおがある
+            
+            [verse]
+            [ja]ふるい　ギターひとつ
+            [ja]もって　たびしてる
+            [ja]ピンクの　マフラーは
+            [ja]あのひの　ぬくもり
+            
+            [ja]だれかを　まもるのが
+            [ja]ぼくに　できること
+            [ja]いまでも　おもってる
+            [ja]それで　いいんだ
+            
+            [verse]
+            [ja]ふわふわ　おみみで
+            [ja]きこえる　きみのうた
+            [ja]だいすき　そのこえが
+            [ja]ゆめに　よりそうよ
+    男声-温柔流行乐:
+        - mature male vocals, deep and warm, jpop, ballad, fennec man, desert wind, gentle and strong
+        - |
+            [inst]
+            
+            [verse]
+            [ja]すなちの　かぜのなか
+            [ja]ふわりと　うごいた
+            [ja]おおきな　おみみには
+            [ja]きみの　こえがする
+            
+            [verse]
+            [ja]しずかな　よるには
+            [ja]おもいでが　ゆれる
+            [ja]とおくの　ほしぞら
+            [ja]なにを　うつしてる？
+            
+            [verse]
+            [ja]ピンクの　セーターは
+            [ja]ふるい　おくりもの
+            [ja]まだ　きみの　においが
+            [ja]すこし　のこってる
+            
+            [ja]あおい　コートには
+            [ja]すなの　しみがある
+            [ja]だけど　そのぶんだけ
+            [ja]つよさを　おぼえた
+            
+            [verse]
+            [ja]ふわふわ　しっぽより
+            [ja]やわらかい　ことばで
+            [ja]だいじな　ものだけは
+            [ja]まもって　いきたいんだ
+    男声-80动画圣斗士热血:
+        - anime op, 80s hero rock, powerful male vocals, hot-blooded, saint seiya style, warrior, destiny, cosmos
+        - |
+            [inst]
+            
+            [verse]
+            [ja]あれくるう　かぜをきれ
+            [ja]ひかりを　このてでにぎれ
+            [ja]ふるえる　そのおみみで
+            [ja]せかいの　こえをきけ
+            
+            [verse]
+            [ja]すなのなか　うまれた
+            [ja]きんいろの　ほのおさ
+            [ja]しんじる　ちからだけが
+            [ja]あすを　かえるのさ
+            
+            [verse]
+            [ja]フェネックの　しゅくめい
+            [ja]せなかに　せおって
+            [ja]ピンクの　バンダナが
+            [ja]たたかいの　あかし
+            
+            [ja]やみを　てらすのは
+            [ja]ただひとつの　ゆうき
+            [ja]こたえは　ここにある
+            [ja]ほのおの　フェネックソウル！
+            
+            [verse]
+            [ja]きらめけ　しっぽのひかり
+            [ja]とびたて　よるをこえて
+            [ja]だいすきな　あのひとを
+            [ja]まもるため　たたかう
+    男声-80摇滚雷鸣古战:
+        - anime OP, 80s dramatic rock, male power vocals, fate, thunder, ancient warriors, clan
+        - |
+            [inst]
+            
+            [verse]
+            [ja]うまれおちた　ときから
+            [ja]しゅくめいは　うごきだす
+            [ja]こどうが　ふるえてる
+            [ja]だれかを　まもるため
+            
+            [verse]
+            [ja]つよさとは　やさしさ
+            [ja]かなしみを　しることさ
+            [ja]つらぬく　そのこころ
+            [ja]あらしを　さけるだろう
+            
+            [verse]
+            [ja]フェネック・クロス　かがやけ！
+            [ja]いかずちの　つばさで
+            [ja]やみを　きりさけ！
+            [ja]いまこそ　とびたて！
+            
+            [ja]あいと　ゆめを　このてに
+            [ja]たしかに　つかむまで
+            [ja]こたえを　もとめて
+            [ja]たたかう　フェネックソウル！
+    男生-蓝调孤独老烟嗓:
+        - blues, slow tempo, mature male vocals, smoky jazz bar, lonely man, desert night, harmonica, fender guitar
+        - |
+            [inst]
+            
+            [verse]
+            [ja]よるのすなばで
+            [ja]ひとりバーボン
+            [ja]きみのこえだけ
+            [ja]のこっているよ
+            
+            [verse]
+            [ja]おおきなおみみが
+            [ja]さびしさひろう
+            [ja]きんのしっぽも
+            [ja]いまじゃ　おもいだけ
+            
+            [verse]
+            [ja]ふるいレコード
+            [ja]まわるだけで
+            [ja]こころのすなは
+            [ja]ふいてくれない
+            
+            [ja]フェネックのうたは
+            [ja]だれにもきこえず
+            [ja]ただこのよるに
+            [ja]しみこんでいく
+    女声-蓝调孤独烟嗓:
+        - blues, soft female vocals, melancholic, smoky jazz bar, lonely girl, desert moonlight, piano ballad
+        - |
+            [inst]
+            
+            [verse]
+            [ja]しろいかみ　ゆれて
+            [ja]よるの　かぜにとける
+            [ja]ひかる　おおきなおみみ
+            [ja]まだ　きみをさがしてる
+            
+            [verse]
+            [ja]ちいさな　グラスのなか
+            [ja]ゆれる　おもいでたち
+            [ja]よるが　ふけるたびに
+            [ja]こころが　とおくなる
+            
+            [verse]
+            [ja]ふたりで　あるいた
+            [ja]すなの　みちすじも
+            [ja]きんいろの　しっぽが
+            [ja]いまでは　さびしくて
+            
+            [ja]フェネックのブルース
+            [ja]そっと　うたってる
+            [ja]だれにも　とどかない
+            [ja]こいびとの　しっぽへ
+    女声-霓虹都市柔和贝斯:
+        - city pop, soft female vocals, synth bass, funky guitar, neon lights, urban night, idol girl
+        - |
+            [inst]
+            
+            [verse]
+            [ja]ねいおん　かがやく
+            [ja]まちの　なかで
+            [ja]しろい　おみみが
+            [ja]ゆれるよ　かぜに
+            
+            [verse]
+            [ja]ふしぎな　まちかど
+            [ja]きらめく　ビルの
+            [ja]はかない　ゆめが
+            [ja]ぼくを　つつむよ
+            
+            [chorus]
+            [ja]フェネックの　シティナイト
+            [ja]ひかりに　まどわされて
+            [ja]ふたりの　せかいが
+            [ja]とけて　ゆくの
+            
+            [verse]
+            [ja]やさしい　かぜのなか
+            [ja]きみの　こえが
+            [ja]はしる　よるに
+            [ja]きらめいてる
+            
+            [chorus]
+            [ja]フェネックの　シティナイト
+            [ja]ねいおんの　ほしぞら
+            [ja]かがやく　まちの
+            [ja]はしで　まってる
+    男声-温柔流行乐(假中文):
+        - mature male vocals, deep and warm, jpop, ballad, fennec man, desert wind, gentle and strong
+        - |
+            [inst]
+            
+            [verse]
+            [ja]wo zou guo shen ye de jie dao
+            [ja]leng feng chui luan si nian de piao liang wai tao
+            [ja]ni de wei xiao xiang xing guang hen xuan yao
+            [ja]zhao liang le wo gu du de mei fen mei miao
+            
+            [chorus]
+            [ja]yuan ni shi feng chui guo wo de lian
+            [ja]dai wo fei guo zui yuan zui yao yuan de shan jian
+            [ja]yuan ni shi feng qing chu wo de meng
+            [ja]ting zai xin tou bu zai piao san wu ji wu zong
+            
+            [verse]
+            [ja]yi qi zai xuan hua bi kai shi su de sao dong
+            [ja]du zi zai tian tai tan wang yue se de meng long
+            [ja]ni shuo ai xiang yin yue dai dian zhong jie zou
+            [ja]yi pai yi tiao rang wo wang le xin de wen du duo kong dong
+            
+            [bridge]
+            [ja]chang qi dui ni de xiang nian bu yin cang
+            [ja]xiang shi you xiang hua xie man cang bu liao de ke wang  
+            [ja]ni de ying zi hui bu diao xiang feng de jue jiang
+            [ja]zhui zhe ni fei yang chuan yue yun hai yi yang fan guang
+            
+            [chorus]
+            [ja]yuan ni shi feng chui guo wo de shou
+            [ja]nuan nuan de chu peng xiang chun ri xi yu wen rou
+            [ja]yuan ni shi feng pan rao wo de shen
+            [ja]shen qing wan wan zhong bu hui you yi tian zou yuan zou
+    🧹清空输入框:
+        - ''
+        - ''

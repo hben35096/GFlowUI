@@ -1,0 +1,30 @@
+ACE-Step-T2M-V1:
+    model_type: T2M
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                checkpoints/ace_step_v1_3.5b.safetensors: Comfy-Org/ACE-Step_ComfyUI_repackaged/all_in_one/ace_step_v1_3.5b.safetensors
+        cg:
+            basic_dir: models
+            files:
+                checkpoints/ace_step_v1_3.5b.safetensors: nahz202/ACE-Step/ace_step_v1_3.5b.safetensors
+            
+    resolution_list: [1024x1024, 1104x944, 944x1104, 1184x880, 880x1184, 1248x832, 832x1248, 1328x800, 800x1328, 1392x752, 752x1392, 1456x720, 720x1456, 1504x688, 688x1504, 1568x672, 672x1568]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
