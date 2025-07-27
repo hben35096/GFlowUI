@@ -1,8 +1,8 @@
 {
   "3": {
     "inputs": {
-      "seed": 611659002332535,
-      "steps": 5,
+      "seed": 513149915223072,
+      "steps": 50,
       "cfg": 5,
       "sampler_name": "euler",
       "scheduler": "simple",
@@ -31,8 +31,11 @@
   },
   "14": {
     "inputs": {
-      "tags": "kawaii, techno, soft female vocals, jpop, idol, fennec girl",
-      "lyrics": "[inst]\n\n[verse]\nふわふわ　おみみが\nゆれるよ　かぜのなか\nきらきら　あおいめ\nみつめる　せかいを\n\n[verse]\nふわふわ　しっぽは\nおおきく　ゆれるよ\nきんいろ　かみのけ\nなびくよ　かぜのなか\n\n[verse]\nコンフィーユーアイの\nまもりびと\nピンクの　セーターで\nえがおを　くれるよ\n\nあおいろ　スカートと\nくろいコート　きんのもよう\nやさしい　ひかりが\nつつむよ　フェネックガール\n\n[verse]\nふわふわ　おみみで\nきこえる　こころの　こえ\nだいすき　フェネックガール\nいつでも　そばにいるよ\n\n\n",
+      "tags": "blues, slow tempo, mature male vocals, smoky jazz bar, lonely man, desert night, harmonica, fender guitar",
+      "lyrics": [
+        "64",
+        0
+      ],
       "lyrics_strength": 1.0000000000000002,
       "clip": [
         "40",
@@ -132,7 +135,7 @@
   "63": {
     "inputs": {
       "filename_prefix": "audio_ACE_Step",
-      "quality": "320k",
+      "quality": "128k",
       "audioUI": "",
       "audio": [
         "18",
@@ -142,6 +145,17 @@
     "class_type": "SaveAudioMP3",
     "_meta": {
       "title": "Save Audio (MP3)"
+    }
+  },
+  "64": {
+    "inputs": {
+      "lyrics": "[Verse 1]\nWith bourbon in hand, I stand alone\nNighttime dunes, a silent tone\nYour voice remains, the only trace\nStill echoing in this empty place\n\n[Verse 2]\nThese ears once caught the laughter bright\nNow gather echoes in the night\nYour golden tail, a fading gleam\nNow just a weight inside my dream\n\n[Verse 3]\nThe record spins, an old refrain\nBut can’t wash out this heart’s dry pain\nThe desert wind won’t make it right\nJust sweeps my soul into the night\n\n[Outro]\nThe fennec’s song, so soft, so low\nNo one hears it come or go\nIt melts into the midnight air\nA lonely tune that’s always there",
+      "language": "English",
+      "threshold": 0.8
+    },
+    "class_type": "LyricsLangSwitch",
+    "_meta": {
+      "title": "ACE-Step Lyrics Language Switch"
     }
   }
 }

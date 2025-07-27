@@ -3,198 +3,563 @@ main_description: ACE-Step 是 ACE Studio 和 StepFun 联合推出的一款开�
 main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
 
 examples_dict:
-    女声-萌系高科技: 
-        - kawaii, techno, soft female vocals, jpop, idol, fennec girl
+    华语男声-钢琴说唱: 
+        - pop, piano, rap, dark, atmospheric
         - |
-            [inst]
+            [verse]
+            月光爬上窗 染白冷的床
+            心跳的方向 带我入迷惘
+            黑夜吞噬光 命运的纸张
+            爱是血色霜 邪恶又芬芳
+            
+            [chorus]
+            你是猎人的欲望 我是迷途的小羊
+            深陷你眼眸的荒 唐突献出心脏
+            我在夜里回荡 是谁给我希望
+            黑暗风中飘荡 假装不再受伤
             
             [verse]
-            ふわふわ　おみみが
-            ゆれるよ　かぜのなか
-            きらきら　あおいめ
-            みつめる　せかいを
+            心锁在门外 谁会解开关怀
+            温柔的手拍 藏着冷酷杀害
+            思绪如尘埃 撞击爱的霹雳
+            灵魂的独白 为你沾满血迹
+            
+            [bridge]
+            你是噩梦的歌唱 是灵魂的捆绑
+            绝望中带着光 悬崖边的渴望
+            心跳被你鼓掌 恶魔也痴痴想
+            渐渐没了抵抗 古老诡计流淌
+            
+            [chorus]
+            你是猎人的欲望 我是迷途的小羊
+            深陷你眼眸的荒 唐突献出心脏
+            我在夜里回荡 是谁给我希望
+            黑暗风中飘荡 假装不再受伤
+            
+            [outro]
+            爱如月黑无光 渗进梦的战场
+            逃入无声的场 放手或心嚷嚷
+            隐秘的极端 爱是极致风浪
+            灵魂彻底交偿 你是终极虚妄
+    华语男声-电子合成: 
+        - electronic, house, electro house, synthesizer, drums, bass, percussion, fast, energetic, uplifting, exciting
+        - |
+            [verse]
+            霓虹灯下我们追逐
+            人群跃动像潮水满布
+            热浪袭来吹散孤独
+            跳进节奏不如停下脚步
+            
+            [pre-chorus]
+            脚尖触电快点感受
+            迎着风声释放自由
+            心跳节拍配合节奏
+            一切烦恼请靠边游
+            
+            [chorus]
+            夏夜狂奔没有尽头
+            星光闪烁舞池不朽
+            尽情挥洒所有节奏
+            无边热情把你包裹哦
             
             [verse]
-            ふわふわ　しっぽは
-            おおきく　ゆれるよ
-            きんいろ　かみのけ
-            なびくよ　かぜのなか
+            天空翻滚黑云入夜
+            每颗星星像音乐律贴
+            耳边回响那低音线
+            环绕耳际如梦境般甜
+            
+            [pre-chorus]
+            脚尖触电快点感受
+            迎着风声释放自由
+            心跳节拍配合节奏
+            一切烦恼请靠边游
+            
+            [chorus]
+            夏夜狂奔没有尽头
+            星光闪烁舞池不朽
+            尽情挥洒所有节奏
+            无边热情把你包裹哦
+
+    华语女声-民谣温馨:
+        - gentle folk, soft R&B rhythms, heartwarming melody, soothing, acoustic guitars, soft percussion, delicate string arrangements
+        - |
+            [verse]
+            这世界太多抱怨填满
+            跌倒后就不敢再向前
+            人为何总轻易地沦陷
+            脆弱到经不起考验
+            
+            [chorus]
+            家是温暖的城堡
+            稻香河畔尽情跑
+            萤火引我回故道
+            重拾纯真的美好
             
             [verse]
-            コンフィーユーアイの
-            まもりびと
-            ピンクの　セーターで
-            えがおを　くれるよ
+            别轻易说放弃听我说
+            换个梦想也一样闪烁
+            为人生绘出绚烂颜色
+            爱就该涂上喜欢的色
             
-            あおいろ　スカートと
-            くろいコート　きんのもよう
-            やさしい　ひかりが
-            つつむよ　フェネックガール
+            [bridge]
+            快乐是赤脚追蜻蜓
+            被蜂叮也觉得很开心
+            稻草人旁歌声伴风吟
+            午后吉他声清脆动听
             
+            [chorus]
+            家是温暖的城堡
+            稻香河畔尽情跑
+            萤火引我回故道
+            重拾纯真的美好
+            
+            [chorus]
+            家是温暖的城堡
+            稻香河畔尽情跑
+            萤火引我回故道
+            重拾纯真的美好
+    华语-脉动节奏舞曲:
+        - techno, dark, minimal, industrial, repetitive, hypnotic, pulsing beat, heavy bassline, mechanical, underground club, dystopian
+        - |
             [verse]
-            ふわふわ　おみみで
-            きこえる　こころの　こえ
-            だいすき　フェネックガール
-            いつでも　そばにいるよ
-    女声-萌系梦幻轻柔: 
+            铁轨下的频率回响
+            城市心脏开始发烫
+            灯光如刀割破幻想
+            我的灵魂开始奔放
+            
+            [pre-chorus]
+            呼吸节拍沉如鼓撞
+            脚步与影子共生长
+            在这无边混响中央
+            我只听得见你欲望
+            
+            [chorus]
+            黑夜像引擎轰鸣
+            机械重复造梦不停
+            孤独变成节奏共鸣
+            我们在冷火中前行
+    华语-慢节奏轻柔:
+        - chillwave, dreamy, ambient, mellow, synth pad, slow groove, retro, lo-fi, emotional, introspective
+        - |
+            [verse]
+            晚风轻拂海岸线
+            光点漫延仿佛昨日画面
+            思绪飘远如流年
+            我在回音中缓缓浮现
+            
+            [pre-chorus]
+            你的声音像晚霞柔软
+            在夜色中悄悄蔓延
+            时间冻结那一瞬间
+            我们不说话 静静相连
+            
+            [chorus]
+            梦里的光总是温柔
+            轻轻摇晃着我的宇宙
+            就算天亮我不回头
+            愿在这片浪潮里停留
+    华语-浪漫抒情:
+        - jay chou style, R&B, pop ballad, classical piano, soft rap, nostalgic, poetic, mandarin pop, rainy day, romantic, youthful, acoustic elements
+        - |
+            [Verse]
+            巷口咖啡香还在
+            老地方人却不回来
+            我撑着伞 不说话
+            回忆落成一片海
+            
+            [Pre-Chorus]
+            你说再见像在微笑
+            我装作不明了
+            那年雨 没停掉
+            心也跟着 吵
+            
+            [Chorus]
+            那年雨 落到现在
+            像你留下的对白
+            一句 “别忘记我”
+            我还在重播
+    华语-哥特小调:
+        - baroque, gothic, minor key, dramatic, harpsichord, organ, cinematic, vampire, lyrical rap, eerie mood, horror fantasy
+        - |
+            [Verse 1]
+            镜子里的你笑得太陌生
+            红酒染红昨夜的伤痕
+            黑玫瑰凋落在地毯深处
+            我数着脚步 声音开始混
+            
+            [Pre-Chorus]
+            那把斑驳的大提琴
+            还弹着断裂的旋律
+            你躲在钟楼第几层
+            在等待谁的诅咒苏醒
+            
+            [Chorus]
+            午夜钟声敲响第三声
+            谁还在古堡梦中沉沦
+            玻璃窗外乌鸦飞腾
+            时间凝固了你的吻
+            
+            [Verse 2]
+            我翻开古书 那页泛黄
+            写满关于你的过往
+            羽毛笔下滴着月光
+            写不出你眼底的悲伤
+            
+            [Pre-Chorus]
+            烛光照不亮走廊
+            你是光也是隐藏
+            那副画我还没临摹
+            你已隐身在画框
+            
+            [Chorus]
+            午夜钟声敲响第四声
+            谁还在长夜独自等
+            梦游的我步步惊魂
+            却甘愿为你献上灵魂
+            
+            [Outro - Soft Rap or Whispering Flow]
+            你轻声说“别回头”
+            而我已走到尽头
+            城门缓缓关闭前
+            我还记得 你的温柔
+    韩语女声-复古明快: 
+        - retro, disco, Motown, soul, funky bass, 80s synth, catchy hook, female vocal, heartbreak, groove, bright + sad
+        - |
+            [Verse 1]
+            널 바라봐도 넌 딴 생각 중
+            내가 웃어도 넌 왜 못 본 척해
+            화장도 고치고 머릴 말아도
+            네 맘은 이미 딴 데 있나 봐
+            
+            [Pre-Chorus]
+            하루 종일 거울만 봐
+            혹시 내가 지겨운 걸까
+            전화기만 쳐다보는 너
+            이젠 나 좀 봐줘 제발
+            
+            [Chorus]
+            다시 날 봐줘 baby
+            그때 그 눈빛처럼
+            다시 안아줘 lately
+            이젠 너무 낯설어
+            
+            사랑한단 그 말
+            요즘엔 왜 없어
+            나 아직 널 기다려
+            다시, 날 봐줘
+            
+            [Verse 2]
+            내가 뭘 잘못했는지 몰라
+            아무 말 없이 멀어지는 널 봐
+            친구들은 다 잊으라지만
+            나는 아직 너 하나뿐이야
+            
+            [Pre-Chorus]
+            하루 이틀 멀어진 널
+            자꾸만 미워하려 해도
+            사진 속 네 미소 보면
+            다시 또 마음이 흔들려
+            
+            [Chorus]
+            다시 날 봐줘 baby
+            그때 그 눈빛처럼
+            다시 안아줘 lately
+            이젠 너무 낯설어
+            
+            사랑한단 그 말
+            요즘엔 왜 없어
+            나 아직 널 기다려
+            다시, 날 봐줘
+            
+            [Bridge]
+            라디오에 너 좋아하던 노래
+            나도 모르게 따라 불러
+            혹시 너도 듣고 있을까
+            그땐 다시 돌아올까
+            
+            [Final Chorus]
+            다시 날 봐줘 baby
+            눈 감아도 생각나
+            혹시 나도 너처럼
+            멀어지면 어쩌나
+            
+            마지막 한 번만
+            예전처럼 웃어줘
+            나 아직 널 기다려
+            다시, 날 봐줘
+    韩语女声-梦幻流行: 
+        - dream pop, synthwave, moody, ethereal, slow tempo, 80s synth, soft vocals, emotional, echo, cinematic, nighttime, longing, inner world, city lights
+        - |
+            [Verse 1]
+            창밖엔 아직 불이 꺼지지 않아
+            네가 걸어간 골목을 바라봐
+            어쩌면 지금도 어딘가에서
+            나처럼 너도 날 떠올릴까
+            
+            [Pre-Chorus]
+            가만히 눈을 감으면
+            귓가에 맴도는 너의 말
+            다 잊었다고 믿었지만
+            또 다시 날 흔들어
+            
+            [Chorus]
+            밤의 틈 사이로
+            너의 기억이 흘러와
+            잊혀진 줄 알았던
+            내 마음을 적셔 와
+            
+            별이 없는 하늘에
+            널 그려보는 이 밤
+            끝나지 않은 이야기
+            다시 시작될까
+            
+            [Verse 2]
+            거리의 불빛이 나를 감싸고
+            네 그림자를 따라 걷고 있어
+            익숙한 공기 속 너의 온기
+            아직 내 안에 살아 있어
+            
+            [Pre-Chorus]
+            스쳐 간 계절 속에도
+            네 목소린 선명해
+            마치 어제처럼 선명한
+            그날의 우리 모습
+            
+            [Chorus]
+            밤의 틈 사이로
+            너의 향기가 스며와
+            조용히 문을 두드려
+            닫혀 있던 내 맘을
+            
+            하루 끝에 서 있는
+            내게 말을 거는 너
+            혹시 지금 이 순간
+            너도 나를 부를까
+            
+            [Outro]
+            어둠이 걷히면
+            넌 사라질까 봐
+            눈을 뜨기 싫은
+            이 밤의 끝에서
+    日语女声-萌系欢快: 
+        - anime, cute female vocals, kawaii pop, j-pop, childish, piano, guitar, synthesizer, fast, happy, cheerful, lighthearted
+        - |
+            [Chorus]
+            [ja]ねぇ、顔が赤いよ？
+            [ja]どうしたの？ 熱があるの？
+            [ja]それとも怒ってるの？
+            [ja]ねぇ、言ってよ！
+            
+            [ja]どうしてそんな目で見るの？
+            [ja]私、悪いことした？
+            [ja]何か間違えたの？
+            [ja]お願い、やめて… 怖いから…
+            [ja]だから、やめてよ…
+            
+            [Bridge]
+            [ja]目を閉じて、くるっと背を向けて、
+            [ja]何も見なかったフリするから、
+            [ja]怒らないで… 許してよ…
+            
+            [Chorus]
+            [ja]ねぇ、顔が赤いよ？
+            [ja]どうしたの？ 熱があるの？
+            [ja]それとも怒ってるの？
+            [ja]ねぇ、言ってよ！
+            
+            [ja]どうしてそんな目で見るの？
+            [ja]私、悪いことした？
+            [ja]何か間違えたの？
+            [ja]お願い、やめて… 怖いから…
+            [ja]だから、やめてよ…
+            
+            [Bridge 2]
+            [ja]待って、もし私が悪いなら、
+            [ja]ごめんなさいって言うから、
+            [ja]アイスクリームあげるから、
+            [ja]もう怒らないで？
+            
+            [ja]Ooooh… 言ってよ！
+    俄语女声-俄罗斯民谣: 
+        - emotive soundscape for dramatic female vocals, sad, this traditional waltz draws from russian and romani folk influences, hungarian minor scales, orchestral strings, folk, russian folk, classic, and romani percussion create an epic
+        - |
+            Не слышны в саду даже шорохи,
+            Всё здесь замерло до утра,
+            Если б знали вы, как мне дороги
+            Подмосковные вечера.
+            
+            Речка движется и не движется,
+            Вся из лунного серебра,
+            Песня слышится и не слышится
+            В эти тихие вечера.
+            
+            Что ж ты милая, смотришь искоса,
+            Низко голову наклоня?
+            Трудно высказать и не высказать
+            Всё, что на сердце у меня.
+            
+            А рассвет уже всё заметнее,
+            Так, пожалуйста, будь добра,
+            Не забудь и ты эти летние
+            Подмосковные вечера.
+    日语女声-萌系梦幻轻柔: 
         - kawaii, dreamy, soft vocals, jpop, idol, fennec girl, pastel
         - |
             [inst]
             
             [verse]
-            ふわり　おみみが
-            よるかぜに　ゆれてる
-            あおぞら　みあげて
-            そっと　うたうの
+            [ja]ふわり　おみみが
+            [ja]よるかぜに　ゆれてる
+            [ja]あおぞら　みあげて
+            [ja]そっと　うたうの
             
             [verse]
-            しっぽも　やさしく
-            こもりうた　かなでる
-            きんいろの　かみは
-            つきの　しずくみたい
+            [ja]しっぽも　やさしく
+            [ja]こもりうた　かなでる
+            [ja]きんいろの　かみは
+            [ja]つきの　しずくみたい
             
             [verse]
-            やみを　てらしてく
-            ちいさな　ひかりで
-            フェネックガールは
-            ゆめの　しゅごしゃさ
+            [ja]やみを　てらしてく
+            [ja]ちいさな　ひかりで
+            [ja]フェネックガールは
+            [ja]ゆめの　しゅごしゃさ
             
-            ピンクのカーディで
-            こころを　あたため
-            あおいリボンには
-            きぼうが　こめられる
-            
-            [verse]
-            きみの　こえだけ
-            とどくよ　ねむるとき
-            だいすき　フェネックガール
-            ゆめでも　あえるから
-    女声-萌系未来赛博: 
-        - kawaii, techno, futuristic jpop, idol, cyber fennec girl
-        - |
-            [inst]
+            [ja]ピンクのカーディで
+            [ja]こころを　あたため
+            [ja]あおいリボンには
+            [ja]きぼうが　こめられる
             
             [verse]
-            ひかりの　おみみが
-            ビームで　とぶように
-            でんぱに　ゆれるね
-            フェネック　シグナル
-            
-            [verse]
-            ゴールドのしっぽが
-            うちゅうを　スキャンする
-            メタルのハートで
-            あいを　ひろうの
-            
-            [verse]
-            エレクトリックボイス
-            きらめく　バイナル
-            ピンクの　ユニットで
-            そらを　てらしてく
-            
-            あおのスーツには
-            フロウする　コードね
-            フェネックガールは
-            みらいの　アイドルさ
-            
-            [verse]
-            ふるえる　こえまで
-            とどくよ　かなたへ
-            だいすき　フェネックガール
-            わたしの　スターライト
-    女声-奇幻哥特女战士: 
+            [ja]きみの　こえだけ
+            [ja]とどくよ　ねむるとき
+            [ja]だいすき　フェネックガール
+            [ja]ゆめでも　あえるから
+    日语女声-奇幻哥特女战士: 
         - jpop, dark fantasy, idol, gothic, fennec warrior girl, sword and magic
         - |
             [inst]
             
             [verse]
-            かぜさえ　きりさく
-            おみみの　やいば
-            やみに　ひそむもの
-            みつめる　あおいめ
+            [ja]かぜさえ　きりさく
+            [ja]おみみの　やいば
+            [ja]やみに　ひそむもの
+            [ja]みつめる　あおいめ
             
             [verse]
-            むきだしの　しっぽ
-            たたかいの　ほのお
-            きんいろの　ひかりが
-            やみを　てらすよ
+            [ja]むきだしの　しっぽ
+            [ja]たたかいの　ほのお
+            [ja]きんいろの　ひかりが
+            [ja]やみを　てらすよ
             
             [verse]
-            くろい　コートに
-            しるべの　まどう
-            ルーンと　いっしょに
-            うたごえ　ひびく
+            [ja]くろい　コートに
+            [ja]しるべの　まどう
+            [ja]ルーンと　いっしょに
+            [ja]うたごえ　ひびく
             
-            つきの　ひかりに
-            まもられた　しょうじょ
-            えいえんの　ちかい
-            たたかう　フェネックガール
+            [ja]つきの　ひかりに
+            [ja]まもられた　しょうじょ
+            [ja]えいえんの　ちかい
+            [ja]たたかう　フェネックガール
             
             [verse]
-            ゆるがない　おもい
-            こころで　ささやく
-            えいえんに　きみの
-            みかたに　なるよ
-    女声-AI故障风:
-        - techno, glitch pop, futuristic, AI idol, fennec-type android girl
+            [ja]ゆるがない　おもい
+            [ja]こころで　ささやく
+            [ja]えいえんに　きみの
+            [ja]みかたに　なるよ
+    英文忧郁悲伤:
+        - melancholic, world, sad
+        - |
+            [Verse]
+            In a world so grand he roams the skies alone
+            His heart a heavy stone a tale untold
+            Whispers of his past echo through the night
+            A lonely dragon searching for the light
+            
+            [Verse 2]
+            Once a mighty force now he drifts in pain
+            His scales once shimmered now they're dark with shame
+            Cast out by his kin in shadows he does hide
+            A haunting sorrow burns deep inside
+            
+            [Chorus]
+            Roaming endless fields with no friend in sight
+            His roar a mournful cry beneath the moon's pale light
+            Tears fall like stars as he flies on his way
+            A lonely dragon yearning for the break of day
+            
+            [Bridge]
+            The world turns cold the nights grow long
+            In his heart he carries an ancient song
+            Of battles fought and love long gone
+            A legend now but his soul is torn
+            
+            [Verse 3]
+            Hoping for a day he'll find a kindred soul
+            To share his pain and make him whole
+            Till then he drifts a shadow in the sky
+            A lonely dragon with tears in his eye
+            
+            [Chorus]
+            Roaming endless fields with no friend in sight
+            His roar a mournful cry beneath the moon's pale light
+            Tears fall like stars as he flies on his way
+            A lonely dragon yearning for the break of day
+    乐器-俄罗斯手风琴:
+        - phonk, russian dark accordion, 130 bpm, russian psaltery, russian harmonica, psychedelic, dark
         - |
             [inst]
-            
-            [verse]
-            データが　はじける
-            おみみは　センサー
-            かぜの　なかから
-            こえを　とりだす
-            
-            [verse]
-            コードで　うごく
-            しっぽの　モーション
-            ゴールデン　モジュール
-            ゆれる　せかい
-            
-            [verse]
-            ぴんくな　RAMに
-            やさしさ　インストール
-            スマイル　ルーティン
-            じこうしてるよ
-            
-            ゼロから　うまれた
-            よるの　ひかり
-            きみだけ　まもる
-            フェネックの　アンドロイド
-            
-            [verse]
-            こころの　ウェーブフォーム
-            きみに　つながる
-            だいすき　フェネックガール
-            けっして　さびしくないよ
-    男声-帅气骑士:
-        - jpop, cool male idol, desert knight, fennec boy, soft vocals
+    乐器-独奏快节奏:
+        - volin, solo, fast tempo
         - |
             [inst]
+    女声-法语旋律女高音:
+        - crystal-clear soprano voice, female voice, romantic melody, strings, pop, piano, french song, soft bass, cello, atmosphere
+        - |
+            [Verse 1: Introspective, setting the scene]
+            Hélène
+            Je m'appelle Hélène
+            Je suis une fille
+            Comme les autres
             
-            [verse]
-            [ja]かぜの　ささやき
-            [ja]とおくで　きいたよ
-            [ja]すなの　うたごえ
-            [ja]こころを　ふるわせた
+            Hélène
+            J'ai mes joies, mes peines
+            Elles font ma vie
+            Comme la vôtre
             
-            [verse]
-            [ja]しっぽが　ゆれてる
-            [ja]たたかいの　あとで
-            [ja]きんの　ひかりが
-            [ja]ぼくを　つつんだ
+            [Pre-Chorus: Build-up to emotional climax]
+            Je voudrais trouver l'amour
+            Simplement trouver l'amour
             
-            [verse]
-            [ja]ピンクの　バンダナ
-            [ja]まもりの　しるしさ
-            [ja]だれより　つよくて
-            [ja]だれより　やさしい
+            [Chorus: Main theme, repeated for impact]
+            Hélène
+            Si mes nuits sont pleines
+            De rêves, de poèmes
+            Je n'ai rien d'autre
             
-            [ja]きみを　さがして
-            [ja]このそら　こえてく
-            [ja]フェネックボーイは
-            [ja]そっと　てを　にぎるよ
+            Et le monde peut m'entendre chanter,
+            Mais sans toi, je suis seule à danser...
+            
+            [Verse 2: Deepening loneliness]
+            Et même
+            Si j'ai ma photo
+            Dans tous les journaux
+            Chaque semaine
+            
+            Personne
+            Ne m'attend le soir
+            Quand je rentre tard
+            Personne ne fait battre mon cœur
+            
+            [Bridge: New melodic section for contrast]
+            Peut-être demain,
+            Sous la pluie ou le soleil,
+            Je croiserai tes mains...
+            
+            [instrumental]
+            
+            [fade out]
     男声-民谣温暖怀旧:
         - japanese folk, mature male vocals, acoustic guitar, soft ballad, fennec man, warm and nostalgic
         - |
@@ -228,39 +593,6 @@ examples_dict:
             [ja]きこえる　きみのうた
             [ja]だいすき　そのこえが
             [ja]ゆめに　よりそうよ
-    男声-温柔流行乐:
-        - mature male vocals, deep and warm, jpop, ballad, fennec man, desert wind, gentle and strong
-        - |
-            [inst]
-            
-            [verse]
-            [ja]すなちの　かぜのなか
-            [ja]ふわりと　うごいた
-            [ja]おおきな　おみみには
-            [ja]きみの　こえがする
-            
-            [verse]
-            [ja]しずかな　よるには
-            [ja]おもいでが　ゆれる
-            [ja]とおくの　ほしぞら
-            [ja]なにを　うつしてる？
-            
-            [verse]
-            [ja]ピンクの　セーターは
-            [ja]ふるい　おくりもの
-            [ja]まだ　きみの　においが
-            [ja]すこし　のこってる
-            
-            [ja]あおい　コートには
-            [ja]すなの　しみがある
-            [ja]だけど　そのぶんだけ
-            [ja]つよさを　おぼえた
-            
-            [verse]
-            [ja]ふわふわ　しっぽより
-            [ja]やわらかい　ことばで
-            [ja]だいじな　ものだけは
-            [ja]まもって　いきたいんだ
     男声-80动画圣斗士热血:
         - anime op, 80s hero rock, powerful male vocals, hot-blooded, saint seiya style, warrior, destiny, cosmos
         - |
@@ -321,128 +653,32 @@ examples_dict:
             [ja]たしかに　つかむまで
             [ja]こたえを　もとめて
             [ja]たたかう　フェネックソウル！
-    男生-蓝调孤独老烟嗓:
+    蓝调孤独老烟嗓:
         - blues, slow tempo, mature male vocals, smoky jazz bar, lonely man, desert night, harmonica, fender guitar
         - |
-            [inst]
+            [Verse 1]
+            With bourbon in hand, I stand alone
+            Nighttime dunes, a silent tone
+            Your voice remains, the only trace
+            Still echoing in this empty place
             
-            [verse]
-            [ja]よるのすなばで
-            [ja]ひとりバーボン
-            [ja]きみのこえだけ
-            [ja]のこっているよ
+            [Verse 2]
+            These ears once caught the laughter bright
+            Now gather echoes in the night
+            Your golden tail, a fading gleam
+            Now just a weight inside my dream
             
-            [verse]
-            [ja]おおきなおみみが
-            [ja]さびしさひろう
-            [ja]きんのしっぽも
-            [ja]いまじゃ　おもいだけ
+            [Verse 3]
+            The record spins, an old refrain
+            But can’t wash out this heart’s dry pain
+            The desert wind won’t make it right
+            Just sweeps my soul into the night
             
-            [verse]
-            [ja]ふるいレコード
-            [ja]まわるだけで
-            [ja]こころのすなは
-            [ja]ふいてくれない
-            
-            [ja]フェネックのうたは
-            [ja]だれにもきこえず
-            [ja]ただこのよるに
-            [ja]しみこんでいく
-    女声-蓝调孤独烟嗓:
-        - blues, soft female vocals, melancholic, smoky jazz bar, lonely girl, desert moonlight, piano ballad
-        - |
-            [inst]
-            
-            [verse]
-            [ja]しろいかみ　ゆれて
-            [ja]よるの　かぜにとける
-            [ja]ひかる　おおきなおみみ
-            [ja]まだ　きみをさがしてる
-            
-            [verse]
-            [ja]ちいさな　グラスのなか
-            [ja]ゆれる　おもいでたち
-            [ja]よるが　ふけるたびに
-            [ja]こころが　とおくなる
-            
-            [verse]
-            [ja]ふたりで　あるいた
-            [ja]すなの　みちすじも
-            [ja]きんいろの　しっぽが
-            [ja]いまでは　さびしくて
-            
-            [ja]フェネックのブルース
-            [ja]そっと　うたってる
-            [ja]だれにも　とどかない
-            [ja]こいびとの　しっぽへ
-    女声-霓虹都市柔和贝斯:
-        - city pop, soft female vocals, synth bass, funky guitar, neon lights, urban night, idol girl
-        - |
-            [inst]
-            
-            [verse]
-            [ja]ねいおん　かがやく
-            [ja]まちの　なかで
-            [ja]しろい　おみみが
-            [ja]ゆれるよ　かぜに
-            
-            [verse]
-            [ja]ふしぎな　まちかど
-            [ja]きらめく　ビルの
-            [ja]はかない　ゆめが
-            [ja]ぼくを　つつむよ
-            
-            [chorus]
-            [ja]フェネックの　シティナイト
-            [ja]ひかりに　まどわされて
-            [ja]ふたりの　せかいが
-            [ja]とけて　ゆくの
-            
-            [verse]
-            [ja]やさしい　かぜのなか
-            [ja]きみの　こえが
-            [ja]はしる　よるに
-            [ja]きらめいてる
-            
-            [chorus]
-            [ja]フェネックの　シティナイト
-            [ja]ねいおんの　ほしぞら
-            [ja]かがやく　まちの
-            [ja]はしで　まってる
-    男声-温柔流行乐(假中文):
-        - mature male vocals, deep and warm, jpop, ballad, fennec man, desert wind, gentle and strong
-        - |
-            [inst]
-            
-            [verse]
-            [ja]wo zou guo shen ye de jie dao
-            [ja]leng feng chui luan si nian de piao liang wai tao
-            [ja]ni de wei xiao xiang xing guang hen xuan yao
-            [ja]zhao liang le wo gu du de mei fen mei miao
-            
-            [chorus]
-            [ja]yuan ni shi feng chui guo wo de lian
-            [ja]dai wo fei guo zui yuan zui yao yuan de shan jian
-            [ja]yuan ni shi feng qing chu wo de meng
-            [ja]ting zai xin tou bu zai piao san wu ji wu zong
-            
-            [verse]
-            [ja]yi qi zai xuan hua bi kai shi su de sao dong
-            [ja]du zi zai tian tai tan wang yue se de meng long
-            [ja]ni shuo ai xiang yin yue dai dian zhong jie zou
-            [ja]yi pai yi tiao rang wo wang le xin de wen du duo kong dong
-            
-            [bridge]
-            [ja]chang qi dui ni de xiang nian bu yin cang
-            [ja]xiang shi you xiang hua xie man cang bu liao de ke wang  
-            [ja]ni de ying zi hui bu diao xiang feng de jue jiang
-            [ja]zhui zhe ni fei yang chuan yue yun hai yi yang fan guang
-            
-            [chorus]
-            [ja]yuan ni shi feng chui guo wo de shou
-            [ja]nuan nuan de chu peng xiang chun ri xi yu wen rou
-            [ja]yuan ni shi feng pan rao wo de shen
-            [ja]shen qing wan wan zhong bu hui you yi tian zou yuan zou
+            [Outro]
+            The fennec’s song, so soft, so low
+            No one hears it come or go
+            It melts into the midnight air
+            A lonely tune that’s always there
     🧹清空输入框:
         - ''
         - ''

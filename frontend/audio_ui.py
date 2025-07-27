@@ -195,7 +195,7 @@ def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, leng
         workflow["3"]["inputs"]["sampler_name"] = sampler_name
     elif model == "ACE-Step-T2M-V1":
         workflow["14"]["inputs"]["tags"] = prompt_input
-        workflow["14"]["inputs"]["lyrics"] = neg_prompt_input
+        workflow["64"]["inputs"]["lyrics"] = neg_prompt_input
         
         workflow["3"]["inputs"]["steps"] = steps
         workflow["3"]["inputs"]["seed"] = seed
@@ -346,7 +346,7 @@ def gradio_ui(app_url, back_app_path, dl_way):
                     all_output = gr.Gallery(label="生成结果", show_label=False, columns=3, object_fit="contain", interactive=False, height=540, selected_index=0, preview=True, scale=2,)
 
         with examples_container:
-            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()), examples_per_page=20)
+            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()), examples_per_page=40)
                                     
         launch_state = gr.State(value=(app_url, back_app_path, dl_way)) # 多个参数放这里方便传递
         img_display_state = gr.State(input_img_display) # 用它来记录吧，别用全局，其实最后没用到
