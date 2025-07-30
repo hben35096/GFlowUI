@@ -108,7 +108,6 @@ def edit_workflow(model, input_img, steps):
 def edit_workflow_ex(model_name, input_img_bg, input_img_fg, zoom, x_move, y_move):
     workflow, _, _ = get_workflow(model_name)
     x, y = functions.get_xy_value(input_img_bg, x_move, y_move)
-    print("看看数值：", input_img_bg, x, y)
 
     if model_name == "LBM-Relight-ex":
         workflow["3"]["inputs"]["image"] = input_img_bg
@@ -122,18 +121,23 @@ def edit_workflow_ex(model_name, input_img_bg, input_img_fg, zoom, x_move, y_mov
 
 
 def preview_location(launch_state, input_img_bg, input_img_fg, zoom, x_move, y_move):
+    display_outputs = None
     app_url, back_app_path, dl_way = launch_state
     if input_img_bg is None or input_img_fg is None:
         gr.Info("背景图或主体图为空", duration=10)
         return None
+    # 这里也检测一下模型
+    model_dl_dict = model_config[model_name_a].get('download_way')
+    model_dl.check_models(back_app_path, model_dl_dict, dl_way) # 检测模型 合成
+    
     model_name = "LBM-Relight-ex"
     workflow = edit_workflow_ex(model_name, input_img_bg, input_img_fg, zoom, x_move, y_move)
     
     from frontend import to_api
     output_file_path_list = to_api.implement(workflow, app_url, back_app_path)
-    
-    display_outputs = output_file_path_list[0]
-    print("看看保存到哪里了", display_outputs)
+    if output_file_path_list:
+        display_outputs = output_file_path_list[0]
+
     return display_outputs
 
 def video_generate(launch_state, input_img_bg, input_img_fg, zoom, x_move, y_move, steps):
