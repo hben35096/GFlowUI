@@ -1,0 +1,52 @@
+{
+  "1930": {
+    "inputs": {
+      "model": "lbm_relight.safetensors",
+      "base_precision": "bf16",
+      "load_device": "main_device"
+    },
+    "class_type": "LoadLBMModel",
+    "_meta": {
+      "title": "Load LBM Model"
+    }
+  },
+  "1944": {
+    "inputs": {
+      "steps": 20,
+      "model": [
+        "1930",
+        0
+      ],
+      "image": [
+        "1996",
+        0
+      ]
+    },
+    "class_type": "LBMSampler",
+    "_meta": {
+      "title": "LBMSampler"
+    }
+  },
+  "1996": {
+    "inputs": {
+      "image": "ComfyUI_temp_dfmxt_00006_.png [temp]"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "1997": {
+    "inputs": {
+      "filename_prefix": "LBM-Repaint",
+      "images": [
+        "1944",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  }
+}

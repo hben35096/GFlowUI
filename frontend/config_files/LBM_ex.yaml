@@ -1,0 +1,37 @@
+
+main_name: LBM_Relighting • 光源统一模型
+main_description: LBM 系列模型之一，这是其中用于重新照明以统一画面光影的模型
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
+
+# 第一个是背景
+examples_dict:
+    车站蓝紫灯光: 
+        - frontend/config_files/examples/bg_chezhan.jpg
+        - frontend/config_files/examples/body_girl.jpg
+    湖泊夕阳:
+        - frontend/config_files/examples/bg_humian.jpg
+        - frontend/config_files/examples/body_woman.jpg
+    秋天公路:
+        - frontend/config_files/examples/bg_qiutian.jpg
+        - frontend/config_files/examples/body_woman.jpg
+    湖泊长颈鹿:
+        - frontend/config_files/examples/bg_humian.jpg
+        - frontend/config_files/examples/body_lu.jpg
+    城市美女:
+        - frontend/config_files/examples/bg_chengshi2.jpg
+        - frontend/config_files/examples/body_meinv2.jpg
+    秋天女孩:
+        - frontend/config_files/examples/bg_qiutian.jpg
+        - frontend/config_files/examples/body_girl.jpg
+    温泉女孩:
+        - frontend/config_files/examples/bg_wenquan2.jpg
+        - frontend/config_files/examples/body_mgirl.jpg
+    湖面女孩:
+        - frontend/config_files/examples/bg_humian.jpg
+        - frontend/config_files/examples/body_lgirl.jpg
+    车站女孩:
+        - frontend/config_files/examples/bg_chezhan.jpg
+        - frontend/config_files/examples/body_mgirl.jpg
+    🧹清空输入框:
+        - null
+        - null

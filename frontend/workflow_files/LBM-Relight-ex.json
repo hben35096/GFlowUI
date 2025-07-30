@@ -1,0 +1,127 @@
+{
+  "2": {
+    "inputs": {
+      "image": "00015-402853967.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "3": {
+    "inputs": {
+      "image": "d.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "13": {
+    "inputs": {
+      "reference_image": [
+        "3",
+        0
+      ],
+      "images": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "Reference Resize",
+    "_meta": {
+      "title": "Reference Resize"
+    }
+  },
+  "16": {
+    "inputs": {
+      "upscale_method": "bilinear",
+      "scale_by": 1.0000000000000002,
+      "image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩放图像（比例）"
+    }
+  },
+  "17": {
+    "inputs": {
+      "detail_method": "VITMatte",
+      "detail_erode": 4,
+      "detail_dilate": 2,
+      "black_point": 0.010000000000000002,
+      "white_point": 0.99,
+      "process_detail": false,
+      "device": "cpu",
+      "max_megapixels": 2,
+      "image": [
+        "2",
+        0
+      ],
+      "birefnet_model": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "LayerMask: BiRefNetUltraV2",
+    "_meta": {
+      "title": "图层遮罩：BiRefNet Ultra V2（高级）"
+    }
+  },
+  "18": {
+    "inputs": {
+      "version": "BiRefNet-General"
+    },
+    "class_type": "LayerMask: LoadBiRefNetModelV2",
+    "_meta": {
+      "title": "图层遮罩：加载BiRefNet模型 V2（高级）"
+    }
+  },
+  "20": {
+    "inputs": {
+      "images": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "To RGB",
+    "_meta": {
+      "title": "To RGB"
+    }
+  },
+  "23": {
+    "inputs": {
+      "filename_prefix": "LBM-Repaint-ex",
+      "images": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "24": {
+    "inputs": {
+      "align": "bottom center ▲",
+      "offset_x": 0,
+      "offset_y": 0,
+      "image_bg": [
+        "3",
+        0
+      ],
+      "images_fg": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "Image Align",
+    "_meta": {
+      "title": "Image Align"
+    }
+  }
+}

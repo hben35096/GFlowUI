@@ -1,0 +1,32 @@
+LBM-Relight:
+    model_type: I2I
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                BiRefNet/pth/BiRefNet-general-epoch_244.pth: Astro202/LBM-Repaint/BiRefNet-general-epoch_244.pth
+                diffusion_models/lbm_relight.safetensors: Astro202/LBM-Repaint/lbm_relight.safetensors
+        cg:
+            basic_dir: models
+            files:
+                BiRefNet/pth/BiRefNet-general-epoch_244.pth: nahz202/Comfy_LayerStyle/BiRefNet-general-epoch_244.pth
+                diffusion_models/lbm_relight.safetensors: nahz202/LBM_relighting/lbm_relight.safetensors
+            
+    resolution_list: [1024x1024, 1104x944, 944x1104, 1184x880, 880x1184, 1248x832, 832x1248, 1328x800, 800x1328, 1392x752, 752x1392, 1456x720, 720x1456, 1504x688, 688x1504, 1568x672, 672x1568]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
