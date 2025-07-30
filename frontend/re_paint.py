@@ -124,7 +124,7 @@ def preview_location(launch_state, input_img_bg, input_img_fg, zoom, x_move, y_m
     display_outputs = None
     app_url, back_app_path, dl_way = launch_state
     if input_img_bg is None or input_img_fg is None:
-        gr.Info("背景图或主体图为空", duration=10)
+        gr.Info("背景图或主体图为空", duration=5)
         return None
     # 这里也检测一下模型
     model_dl_dict = model_config[model_name_a].get('download_way')
@@ -157,6 +157,9 @@ def video_generate(launch_state, input_img_bg, input_img_fg, zoom, x_move, y_mov
     gr.Info("任务已提交，可以到后台查看任务进度", duration=10)
 
     input_img = preview_location(launch_state, input_img_bg, input_img_fg, zoom, x_move, y_move)
+    if input_img is None:
+        gr.Info("背景图或主体图为空", duration=5)
+        return None
     workflow = edit_workflow(workflow_model_name, input_img, steps)
     
     output_file_path_list = to_api.implement(workflow, app_url, back_app_path)
