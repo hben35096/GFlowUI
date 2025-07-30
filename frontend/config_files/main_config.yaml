@@ -18,5 +18,8 @@
 # model_config_file: HiDream_config.yaml
 # ex_config_file: HiDream_ex.yaml
 
-model_config_file: AceStep_config.yaml
-ex_config_file: AceStep_ex.yaml
+# model_config_file: AceStep_config.yaml
+# ex_config_file: AceStep_ex.yaml
+
+model_config_file: LBM_config.yaml
+ex_config_file: LBM_ex.yaml
