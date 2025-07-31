@@ -1,0 +1,71 @@
+main_name: SDXL-Lightning • 极速图像生成模型
+main_description: Stability-AI 开源的图像生成模型，后来经过社区优化，目前依然是图像生成速度最快的模型
+main_logo: https://codewithgpu-image-1310972338.cos.ap-beijing.myqcloud.com/80455-874446925-MxeXEK30S9C1UZnXeiwr.png
+
+examples_dict:
+    人物-汉服女孩:
+        - best_quality, extremely hyperdetailed, absurdres, stunning, lifelike, 8k,1girl, extremely beautiful and aesthetic shape of face and body, Instagram photo, morandi_color_palette, fair_skin, loungewear, hanfu
+        - low quality, worstquality, cartoon, painting, sketches, deformed
+    人物-水下摄影:
+        - Underwater photography, high-quality, one girl, underwater, caustics
+        - (poor quality, worst quality, bad quality:1.5),drawing,painting,crayon,sketch,graphite,impressionist,noisy,blurry,soft,deformed,ugly,
+    人物-梦幻美女: 
+        - The highest quality, dreamy colors, surrealism, a beautiful white skinned girl,
+        - (poor quality, worst quality, bad quality:1.5),drawing,painting,crayon,sketch,graphite,impressionist,noisy,blurry,soft,deformed,ugly,
+    人物-奇幻游戏角色女: 
+        - 1girl,upper_body,intricate,elegant,sharp focus,cinematic,beautiful,highly detailed,creative,attractive,artistic,professional,colorful,amazing,cute,perfect,pretty,dynamic,fine detail,inspired,ambient background,singular background,beautiful composition,full background,beautiful scenic,perfect composition,background composed,detailed background,amazing composition,epic composition,epic,
+        - (poor quality, worst quality, bad quality:1.5),drawing,painting,crayon,sketch,graphite,impressionist,noisy,blurry,soft,deformed,ugly,
+    人物-未来奇幻女孩:
+        - The highest quality of movie stills, dreamy colors, surrealism, a beautiful girl with fair skin in a future city. Emotion, harmony, interlude, highly detailed, high - budget, out - of - focus, cinematic, emotional, epic, gorgeous, film grain, grain, the highest quality of ethereal fantasy concept art, dreamy colors, surrealism, a beautiful girl with fair skin in a future city. Gorgeous, celestial, ethereal, painting, epic, majestic, magical, fantasy art, cover art, dreamy
+        - text, watermark
+    人物-英气逼人: 
+        - A man with a heroic and dignified expression, sharp eyes and a confident stance, looking like a natural leader
+        - text, watermark
+    人物-喜悦洋溢:
+        - A young Asian girl brimming with joy and radiance. She is wearing a white dress, her skin is fair, and her bright smile lights up her face, exuding happiness and warmth.
+        - text, watermark
+    人物-不怒自威:
+        - A king with a serene and unyielding expression, his calm gaze instills both respect and fear, without a need for words.
+        - text, watermark
+    人物-顽皮淘气:
+        - A boy with a mischievous and playful expression, his eyes sparkling with curiosity and mischief, ready to cause some harmless trouble.
+        - text, watermark
+    人物-男孩和白虎:
+        - cinematic photo Full body,Portrait of a cute  little_boy and a (white big  tiger:1.1),on the cloud,big smile,morning, illustration,(Disney animation:0.5),4k,8k,cuteness,(very happy:0.2),Miki Asai Macro photography,hyper detailed,trending on artstation,sharp focus,studio photo,intricate details,highly detailed,by greg rutkowski,black hair,asian,child photography, . 35mm photograph, film, bokeh, professional, 4k, highly detailed
+        - ugly,deformed,noisy,blurry,distorted,grainy,nsfw,
+    人物-冰雪小公主:
+        - illustration,Disney animation a little girl,solo,(full body portrait:1.2),castle,child photography,princess skirt,real photos,dream,in a beautiful palace made of ice and snow,indoor, .4k,8k,Miki Asai Macro photography,close-up,hyper detailed,trending on artstation,sharp focus,studio photo,intricate details,highly detailed,by greg rutkowski,
+        - ugly,deformed,noisy,blurry,distorted,grainy,nsfw,
+    人物-女人面部特写:
+        - a close up of a person wearing a white shirt, gorgeous chinese model, atelier lulua, flat chest, stylized make-up on face, ai, k-pop, very round, inspired by Chen Lu, on a young beautiful woman neck, e-girl, trending on interfacelift, big eyes, streaming
+        - cartoon,(worst quality, low quality, normal quality:1.3),greasy skin,smooth skin,
+    风格-儿童插画淡彩兔子:
+        - "bunny,(Ink_wash_painting:0.3),cute,healing,(warm colors:0.1),pure,(children's illustration:0.9),(lightgray:0.4),pastel_color,brush,"
+        - text, watermark
+    风格-插画风中国古建筑:
+        - wash painting,prospect,prosperous,bright lighting,(the window emits light),lantern,the moon rises high in the distance,ancient chinese architecture,lighting,lake,4k,masterpiece,highest quality,colorful,rich details,
+        - text, watermark
+    风格-微观女孩与兔子:
+        - micro-landscape,there is a small child standing next to a  bunny,snowy winter christmas night,in style of atey ghailan,photo of the girl,ultrarealistic sweet bunny girl,ken wong,tiny villagers,elves,beautiful  face,f/1.8,f/1.2,cute,disney animation,
+        - ugly,deformed,noisy,blurry,distorted,grainy,nsfw,
+    风格-皮克斯风白雪公主:
+        - A Pixar animation character of a Snow White. pixar-style, studio anime, Disney, high-quality, background
+        - text, watermark
+    风格-日系小清新:
+        - full body portrait,1girl,, fresh,simple,bright_colors,soft lighting,clear_imagery, artistic (fair_skin:0.8), lovely_background, flawless, Cool_colour_tone, (by_rinko kawauchi:0.8),
+        - complex,busy,(dim:1.2),(shadowy:1.2),non-traditional,quirky,exaggerated,dramatic,cluttered,chaotic,
+    风格-微观童话镇:
+        - "alice's adventures in wonderland: a fairy tale world,a little girl,colorful flowers,, micro-landscape style,f/1.2,f/1.8,in style of atey ghailan,ken wong,beautiful  face,(cute:1.1),(tiny villagers:0.5),ultrarealistic,vibrant,beautiful,crisp,detailed,ultra detailed,intricate,"
+        - quiet, uninterested, uninvolved, lackluster,realistic,photographic,
+    风格-印象派风格:
+        - A sunrise over a calm lake, soft colors blending in the sky, shimmering light on the water, impressionist painting style, brushstroke texture, peaceful and serene atmosphere.
+        - text, watermark
+    风格-科幻克苏鲁女人:
+        - Alien-themed woman. Extraterrestrial, cosmic, otherworldly, mysterious, science fiction, highly detailed, feminine, complex, elegant, highly detailed, digital painting, ArtStation, concept art, smooth, sharp focus, illustration, art by artgerm and greg rutkowski, alphonse mucha and william - adolphe bouguereau
+        - (poor quality, worst quality, bad quality:1.5),drawing,painting,crayon,sketch,graphite,impressionist,noisy,blurry,soft,deformed,ugly,
+    场景-梦幻奇幻配色:
+        - intricate,cinematic,highly detailed,inspired,pure,stunning,great composition,calm,highly detail,designed,scenery,relaxed,appealing,true colors,
+        - text, watermark
+    🧹清空输入框:
+        - ''
+        - ''

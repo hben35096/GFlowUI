@@ -88,6 +88,8 @@ def check_models(back_app_path, model_dl_dict, dl_way):
     for file in model_file_list:
         try:
             file_path = os.path.join(model_dir, file)
+            file_dir = os.path.dirname(file_path)
+            os.makedirs(file_dir, exist_ok=True)
             if not os.path.exists(file_path): # not
                 info_t = f"检测到模型 {os.path.basename(file_path)} 不存在，正在尝试下载，请耐心等待..."
                 print(info_t)

@@ -1,0 +1,33 @@
+SDXL-Lightning-T2I:
+    model_type: T2I
+    download_way:
+        ms:
+            basic_dir: models
+            files:
+                checkpoints/dreamshaperXL_lightningDPMSDE.safetensors: Astro202/sdxl_lightning/dreamshaperXL_lightningDPMSDE.safetensors
+        cg:
+            basic_dir: models
+            files:
+                checkpoints/dreamshaperXL_lightningDPMSDE.safetensors: nahz202/sd_xl/dreamshaperXL_lightningDPMSDE.safetensors
+            
+    resolution_list: [1024x1024, 1024x768, 768x1024, 1104x944, 944x1104, 1184x880, 880x1184, 1248x832, 832x1248, 1328x800, 800x1328, 1392x752, 752x1392, 1456x720, 720x1456, 1504x688, 688x1504, 1568x672, 672x1568]
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

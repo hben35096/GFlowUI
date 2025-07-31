@@ -175,7 +175,18 @@ def edit_workflow(model, prompt_input, neg_prompt_input, scale, steps, cfg, leng
 
         workflow["3"]["inputs"]["sampler_name"] = sampler_name
 
+    elif model == "SDXL-Lightning-T2I":
+        workflow["6"]["inputs"]["text"] = prompt_input
+        workflow["7"]["inputs"]["text"] = neg_prompt_input
+        
+        workflow["3"]["inputs"]["steps"] = steps
+        workflow["3"]["inputs"]["seed"] = seed
+        workflow["3"]["inputs"]["cfg"] = cfg
+        workflow["3"]["inputs"]["sampler_name"] = sampler_name
 
+        workflow["5"]["inputs"]["width"] = width
+        workflow["5"]["inputs"]["height"] = height
+        workflow["5"]["inputs"]["batch_size"] = batch_size
     
 
     return workflow
@@ -198,7 +209,7 @@ def video_generate(launch_state, img_display_state, model, prompt_input, neg_pro
     all_output_file_path = []
     model_dl_dict = model_config[model].get('download_way')
     model_dl.check_models(back_app_path, model_dl_dict, dl_way) # 检测模型
-    gr.Info("任务已提交，可以到后台查看任务进度", duration=10)
+    gr.Info("任务已提交，可以到后台查看任务进度", duration=4)
     for i in range(queue_size):
         print(f"列队任务：{i+1}/{queue_size}")
         if i > 0:
@@ -262,11 +273,11 @@ def gradio_ui(app_url, back_app_path, dl_way):
                 # gr.Markdown("#### 可选参数")
                 model = gr.Dropdown(choices=model_names, label="模型")
                 with gr.Group():
-                    scale = gr.Dropdown(choices=resolution_list, label="分辨率(宽×高)",)
-                    steps = gr.Slider(value=20, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
-                    cfg = gr.Slider(value=5.0, label=cfg_name, maximum=32, step=0.1)
+                    scale = gr.Dropdown(choices=resolution_list, value="1184x880", label="分辨率(宽×高)",)
+                    steps = gr.Slider(value=4, label='迭代步数 Steps', minimum=1, maximum=128, step=1)
+                    cfg = gr.Slider(value=1.5, label=cfg_name, maximum=32, step=0.1)
                     length = gr.Slider(value=97, label='生成帧数', minimum=25, maximum=1441, step=24, visible=False) # 用不着了
-                    sampler_name = gr.Dropdown(choices=SAMPLER_NAMES, label="采样器",)
+                    sampler_name = gr.Dropdown(choices=SAMPLER_NAMES, value="dpmpp_sde", label="采样器",)
                     batch_size = gr.Slider(value=1, label='单批数量', minimum=1, maximum=16, step=1, interactive=True) # 禁用吧 , info="当前模式下批次大小不可修改"
                     
                 with gr.Row():
@@ -295,7 +306,7 @@ def gradio_ui(app_url, back_app_path, dl_way):
                     all_output = gr.Gallery(label="生成结果", columns=3, object_fit="contain", interactive=False, height=432, selected_index=0, preview=True, scale=2)
 
         with examples_container:
-            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()),)
+            examples = gr.Examples(label="提示词示例:", examples=examples_norm, inputs=[prompt_input, neg_prompt_input, input_img], example_labels=list(examples_dict.keys()), examples_per_page=40)
                                     
         launch_state = gr.State(value=(app_url, back_app_path, dl_way)) # 多个参数放这里方便传递
         img_display_state = gr.State(input_img_display) # 用它来记录吧，别用全局，其实最后没用到
@@ -320,7 +331,8 @@ def gradio_ui(app_url, back_app_path, dl_way):
         }
 
         # 用字典是方便很多
-        generate_btn.click(**clear_outputs_kwargs).success(**generate_kwargs).success(**seed_update_kwargs)
+        # generate_btn.click(**clear_outputs_kwargs).success(**generate_kwargs).success(**seed_update_kwargs)
+        generate_btn.click(**generate_kwargs).success(**seed_update_kwargs)
         model.select(fn=model_switch, inputs=[model], outputs=[scale, img_display_state, input_img])
 
     return demo
